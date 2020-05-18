@@ -1,0 +1,27 @@
+
+.bg-sidipi{
+    background-color: #2F2E41 !important;
+}
+
+.bg-sidipi2{
+    background-color:#00BFA6;
+}
+
+.bg-sidipi3{
+    background-color: #3F3D56;
+}
+
+.btn-sidipi{
+    background-color:#00BFA6; 
+    color: #2F2E41;
+}
+
+.btn-sidipi:hover{
+    background-color: rgb(33, 226, 200);
+    color: #2F2E41;
+}
+
+
+.nav-item .nav-link span{
+    color: #00BFA6 !important;
+}
