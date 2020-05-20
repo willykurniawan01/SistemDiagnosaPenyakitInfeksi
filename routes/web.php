@@ -15,14 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return redirect('login');
-});
-
-
-
-
-
+Route::get('/', 'SidipiController@index');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('Admin/home', 'HomeController@index')->name('home');
