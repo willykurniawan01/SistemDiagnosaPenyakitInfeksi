@@ -21,22 +21,28 @@
                 <form class="user" method="post" action="{{route('login')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                      <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail"
-                        aria-describedby="emailHelp" placeholder="Enter Username">
+                      <input type="text" name="username" class="form-control form-control-user @error('username') is-invalid @enderror" id="username"
+                        aria-describedby="username" placeholder="Username" >
+                    
+                  @error('username')
+                   <div class="alert alert-danger mt-3">{{ $message }}</div>
+                  @enderror
                     </div>
+                    
                     <div class="form-group">
-                      <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword"
+                      <input type="password" name="password" id="password" class="form-control form-control-user @error('password') is-invalid @enderror" 
                         placeholder="Password">
+
+                        @error('password')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                         @enderror
                     </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-sidipi btn-user btn-block">
+
+                  <div class="form-group">     
+                    <button type="submit" class="btn btn-sidipi btn-user btn-block font-weight-bold text-white">
                       Login
                     </button>
+                  </div>
                   
                   </form>
                   <hr>
