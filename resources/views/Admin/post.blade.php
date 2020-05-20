@@ -3,7 +3,7 @@
 
 @section('content')
 <!-- Begin Page Content -->
- <div class="container-fluid">
+ <div class="container">
 
      <!-- Button trigger modal -->
 
@@ -71,6 +71,7 @@
                          @endforeach  
                  </tbody>
              </table>
+             {{ $semua->links() }}
          </div>
 
          <!-- semua -->
@@ -217,7 +218,7 @@
          <!-- input data -->
          <div class="tab-pane fade" id="tambah-data" role="tabpanel" aria-labelledby="tambah-data-tab">
              <div class="container">
-                 <div class="row mt-4">
+                 <div class="row my-4">
                      <div class="col">
 
                      <form method="post" action="{{route('input-post')}}" enctype="multipart/form-data">
@@ -249,7 +250,7 @@
                                      <div class="invalid-feedback">Example invalid custom file feedback</div>
                                  </div>
                              </div>
-                             <button type="submit" class="btn btn-sidipi">Submit</button>
+                             <button type="submit" class="btn btn-sidipi text-white font-weight-bold">Submit</button>
                          </form>
                      </div>
                  </div>

@@ -5,7 +5,7 @@
     
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container">
 
 
     <!-- Button trigger modal -->

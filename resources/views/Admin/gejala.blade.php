@@ -5,7 +5,7 @@
 @section('content')
     
 <!-- Begin Page Content -->
- <div class="container-fluid">
+ <div class="container">
 
      <!-- Button trigger modal -->
      <button type="button" class="btn btn-sidipi text-white font-weight-bold" data-toggle="modal" data-target="#gejala">
