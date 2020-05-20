@@ -34,7 +34,7 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <button type="submit" href="index.html" class="btn btn-sidipi btn-user btn-block">
+                    <button type="submit" class="btn btn-sidipi btn-user btn-block">
                       Login
                     </button>
                   

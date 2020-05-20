@@ -176,6 +176,16 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{url('Admin/assets/vendor/jquery/jquery.min.js')}}"></script>
+    
+    
+    <script>
+        $(document).ready(function(){
+
+
+
+        });  
+    </script>
+
     <script src="{{url('Admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->

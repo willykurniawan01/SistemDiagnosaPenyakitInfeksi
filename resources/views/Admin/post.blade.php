@@ -9,7 +9,10 @@
 
      <ul class="nav nav-tabs" id="myTab" role="tablist">
          <li class="nav-item">
-             <a class="nav-link active text-dark" id="portal-informasi-tab" data-toggle="tab" href="#portal-informasi" role="tab" aria-controls="portal-informasi" aria-selected="true">Portal Informasi</a>
+             <a class="nav-link active text-dark" id="semua-tab" data-toggle="tab" href="#semua" role="tab" aria-controls="semua" aria-selected="true">Semua</a>
+         </li>
+         <li class="nav-item">
+             <a class="nav-link text-dark" id="portal-informasi-tab" data-toggle="tab" href="#portal-informasi" role="tab" aria-controls="portal-informasi" aria-selected="false">Portal Informasi</a>
          </li>
          <li class="nav-item">
              <a class="nav-link text-dark" id="info-kesehatan-tab" data-toggle="tab" href="#info-kesehatan" role="tab" aria-controls="info-kesehatan" aria-selected="false">Info Kesehatan</a>
@@ -27,10 +30,53 @@
 
 
 
-     <!-- portal informasi -->
+     <!-- semua -->
      <div class="tab-content" id="myTabContent">
-         <div class="tab-pane fade show active" id="portal-informasi" role="tabpanel" aria-labelledby="home-tab">
+         <div class="tab-pane fade show active" id="semua" role="tabpanel" aria-labelledby="home-tab">
 
+            <div class="row my-3">
+                <div class="col-6">
+                    <form action="" class="form-inline">
+                       <input type="text" id="cari" class="form-control w-75">
+                       <button class="btn btn-sidipi text-white font-weight-bold">Cari</button>
+                   </form>
+               </div>
+            </div>
+            
+             <!-- table -->
+             <table class="table">
+                 <thead class="bg-sidipi text-light">
+                     <tr>
+                         <th scope="col">No</th>
+                         <th scope="col">Judul</th>
+                         <th scope="col">Waktu Di buat</th>
+                         <th scope="col">image</th>
+                         <th scope="col">Action</th>
+                     </tr>
+                 </thead>
+                 <tbody class="text-dark font-weight-bold">
+                    @foreach ($semua as $p)
+                    <tr>
+                         <th scope="row">{{$loop->iteration}}</th>
+                            <td>{{$p->judul}}</td>
+                            <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
+                    <td><img class="img-thumbnail" width="300px" height="300px" src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>                    
+                         <td>
+                         <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}" class=" btn badge btn-danger">Hapus</a>
+                         <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}" class="btn badge btn-success mr-1">Edit</a>
+                         </td>
+                        </tr>
+                         @endforeach  
+                 </tbody>
+             </table>
+         </div>
+
+         <!-- semua -->
+
+
+
+         <!-- portal informasi -->
+         <div class="tab-pane fade" id="portal-informasi" role="tabpanel" aria-labelledby="profile-tab">
              <!-- table -->
              <table class="table mt-3">
                  <thead class="bg-sidipi text-light">
@@ -43,15 +89,16 @@
                      </tr>
                  </thead>
                  <tbody class="text-dark font-weight-bold">
+                   
                     @foreach ($portal_informasi as $p)
                     <tr>
                          <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$p->judul}}</td>
                             <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                    <td><img width="100px" height="100px" src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>                    
+                            <td><img class="img-thumbnail" width="300px" height="300px" src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>                      
                          <td>
-                         <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}" class=" btn badge btn-danger">Hapus</a>
-                         <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}" class="btn badge btn-success mr-1">Edit</a>
+                            <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}" class=" btn badge btn-danger">Hapus</a>
+                            <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}" class="btn badge btn-success mr-1">Edit</a>
                          </td>
                         </tr>
                          @endforeach  
@@ -60,7 +107,6 @@
          </div>
 
          <!-- portal informasi -->
-
 
 
          <!-- info kesehatan -->
@@ -83,7 +129,7 @@
                          <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$p->judul}}</td>
                             <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                            <td>{{$p->img}}</td>                    
+                            <td><img class="img-thumbnail" width="300px" height="300px" src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>                      
                          <td>
                             <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}" class=" btn badge btn-danger">Hapus</a>
                             <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}" class="btn badge btn-success mr-1">Edit</a>
@@ -118,7 +164,7 @@
                          <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$p->judul}}</td>
                             <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                            <td>{{$p->img}}</td>                    
+                            <td><img class="img-thumbnail" width="300px" height="300px" src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>                       
                          <td>
                             <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}" class=" btn badge btn-danger">Hapus</a>
                             <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}" class="btn badge btn-success mr-1">Edit</a>
@@ -153,7 +199,7 @@
                          <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$p->judul}}</td>
                             <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                            <td>{{$p->img}}</td>                    
+                            <td><img class="img-thumbnail" width="300px" height="300px" src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>                       
                          <td>
                             <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}" class=" btn badge btn-danger">Hapus</a>
                             <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}" class="btn badge btn-success mr-1">Edit</a>

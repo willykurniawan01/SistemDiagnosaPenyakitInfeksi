@@ -17,6 +17,7 @@ class PostController extends Controller
     public function index()
     {
         //query
+        $semua = DB::table('post')->get();
         $portal_informasi = DB::table('post')->where('kategori', 'like', '%portal informasi%')->get();
         $info_kesehatan = DB::table('post')->where('kategori', 'like', '%info kesehatan%')->get();
         $corona_virus = DB::table('post')->where('kategori', 'like', '%corona virus%')->get();
@@ -24,6 +25,7 @@ class PostController extends Controller
         //query
 
         return view('Admin.post', [
+            'semua' => $semua,
             'portal_informasi' => $portal_informasi,
             'info_kesehatan' => $info_kesehatan,
             'corona_virus' => $corona_virus,
