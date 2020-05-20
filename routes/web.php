@@ -30,6 +30,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('Admin/gejala', 'GejalaController@index')->name('gejala');
     Route::get('Admin/post', 'PostController@index')->name('post');
 
+    Route::post('Admin/post', 'PostController@index')->name('cari');
+
     //inputpenyakit
     Route::post('Admin/penyakit/input', 'PenyakitController@store')->name('input-penyakit');
 

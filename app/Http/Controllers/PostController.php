@@ -14,15 +14,23 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //query
-        $semua = DB::table('post')->get();
+        if ($request->input('cari')) {
+            $semua = DB::table('post')
+                ->where('judul', 'like', '%' . $request->input('cari') . '%')->get();
+        } else {
+            $semua = DB::table('post')->get();
+        }
+
+
         $portal_informasi = DB::table('post')->where('kategori', 'like', '%portal informasi%')->get();
         $info_kesehatan = DB::table('post')->where('kategori', 'like', '%info kesehatan%')->get();
         $corona_virus = DB::table('post')->where('kategori', 'like', '%corona virus%')->get();
         $penyakit_infeksi = DB::table('post')->where('kategori', 'like', '%penyakit infeksi%')->get();
         //query
+
 
         return view('Admin.post', [
             'semua' => $semua,

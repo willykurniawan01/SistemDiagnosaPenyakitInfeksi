@@ -35,10 +35,12 @@
          <div class="tab-pane fade show active" id="semua" role="tabpanel" aria-labelledby="home-tab">
 
             <div class="row my-3">
-                <div class="col-6">
-                    <form action="" class="form-inline">
-                       <input type="text" id="cari" class="form-control w-75">
-                       <button class="btn btn-sidipi text-white font-weight-bold">Cari</button>
+                <div class="col-8">
+                    <form action="{{route('cari')}}" method="POST" class="form-inline">
+                        @csrf
+                       <input type="text" name="cari" id="cari" class="form-control w-50">
+                       <button type="submit" class="btn btn-sidipi text-white font-weight-bold">Cari</button>
+                        <a href="{{route('post')}}" class="btn btn-sidipi font-weight-bold text-white mx-2">Refresh</a>
                    </form>
                </div>
             </div>
