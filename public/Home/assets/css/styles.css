@@ -117,7 +117,6 @@ section.carousel .img-carousel{
 
 .portal-informasi .portal-container{
   margin-bottom: 20px;
-  margin-left: 13%;
 }
 
 .portal-informasi .portal-container h4{
@@ -163,7 +162,6 @@ section.carousel .img-carousel{
   
   .portal-informasi .portal-container{
     margin-bottom: 20px;
-    margin-left: 13%;
   }
   
      
@@ -172,5 +170,88 @@ section.carousel .img-carousel{
 
 
 /* Info Kesehatan */
+section.info-kesehatan{
+height: 600px;
+padding-top: 100px;
+padding-bottom: 100px;
+background-color: #EDEEF2;
+}
 
+section.info-kesehatan .info-kesehatan-container h4{
+  font-size: 30px;
+  color: #00BFA6;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+section.info-kesehatan .info-kesehatan-container{
+  margin-bottom: 20px;
+}
+
+section.info-kesehatan .info-carousel .carousel{
+  height: 400px;
+}
 /* Info Kesehatan */
+
+/* penyakit-infeksi */
+section.penyakit-infeksi{
+  height: 500px;
+  background-color: #EDEEF2;
+  padding-top:100px;
+  padding-bottom:100px;
+}
+
+section.penyakit-infeksi .penyakit-container h4{
+  font-size: 30px;
+  color: #00BFA6;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* penyakit-infeksi */
+
+
+/* Developer */
+section.developer{
+  height: 400px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+section.developer .developer-container h4{
+  font-size: 30px;
+  color: #00BFA6;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+section.developer .container .figure .figure-img{
+  position: relative;
+}
+
+section.developer .container .figure .figure-img a{
+  position: absolute;
+  top: 0;
+  right: 70px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  transition: .5s;
+}
+
+section.developer .container .figure .figure-img a:hover{
+  opacity: 1;
+  transition: .5s;
+}
+
+/* Developer */
+
+
+
+/* footer */
+footer.footer{
+  height: 400px;
+  background-color:#2F2E41;
+}
+/* footer */

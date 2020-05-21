@@ -37,6 +37,23 @@
     <!-- navbar -->
    @yield('content')
 
+   
+  <!-- section footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4"></div>
+            <div class="row">
+                <div class="col-4"></div>
+            <div class="row">
+                <div class="col-4"></div>
+            </div>
+        </div>
+
+    </footer>
+
+<!-- section footer -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
