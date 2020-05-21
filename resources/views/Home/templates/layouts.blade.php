@@ -12,12 +12,12 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:700|Montserrat:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url('Home/assets/css/styles.css')}}">
     <link rel="icon" href="{{url('Home/assets/img/LOGO.png')}}">
-    <title>SIDIPI</title>
+    <title>SIDIPI - @yield('title')</title>
 </head>
 
 <body>
      <!-- navbar -->
-     <nav class="navbar navbar-expand-lg navbar-dark">
+     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#"> <img src="{{url('Home/assets/img/LOGO.png')}}" alt=""> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
