@@ -16,8 +16,8 @@
 </head>
 
 <body>
-     <!-- navbar -->
-     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#"> <img src="{{url('Home/assets/img/LOGO.png')}}" alt=""> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -26,33 +26,110 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="#">HOME</a>
-                    <a class="nav-item nav-link" href="#">ARTIKEL</a>
-                    <a class="nav-item nav-link" href="#">PENYAKIT</a>
-                    <a class="nav-item nav-link" href="#">DIAGNOSA</a>
+                    <a class="nav-item nav-link" href="{{route('sidipi-home')}}">HOME</a>
+                    <a class="nav-item nav-link" href="{{route('sidipi-artikel')}}">ARTIKEL</a>
+                    <a class="nav-item nav-link" href="{{route('sidipi-penyakit')}}">PENYAKIT</a>
+                    <a class="nav-item nav-link" href="{{route('sidipi-diagnosa')}}">DIAGNOSA</a>
                 </div>
             </div>
         </div>
     </nav>
     <!-- navbar -->
-   @yield('content')
+    @yield('content')
 
-   
-  <!-- section footer -->
+
+    <!-- section footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-4"></div>
-            <div class="row">
-                <div class="col-4"></div>
-            <div class="row">
-                <div class="col-4"></div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="footer-title">
+                                Informasi
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col">
+                            <a href="#" class="footer-link">
+                                Kebijakan
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col">
+                            <a href="#" class="footer-link">
+                                informasi Kesehatan
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col">
+                            <a href="#" class="footer-link">
+                                penyakit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="footer-title">
+                                SIDIPI
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col">
+                            <a href="#" class="footer-link">
+                                Tentang Kami
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col">
+                            <a href="#" class="footer-link">
+                                Kontak Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="footer-title">
+                                Social Media
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col">
+                            <a href="#" class="footer-icon-link">
+                                <img src="{{url('Home/assets/img/facebook.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" class="footer-icon-link">
+                                <img src="{{url('Home/assets/img/instagram.png')}}" alt="">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#" class="footer-icon-link">
+                                <img src="{{url('Home/assets/img/twitter.png')}}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <h4 class="footer-copyright">Copyright 2020 Sistem Diagnosa Infeksi.</h4>
             </div>
         </div>
-
     </footer>
 
-<!-- section footer -->
+    <!-- section footer -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'SidipiController@index');
+Route::get('/', 'SidipiController@index')->name('sidipi-home');
+Route::get('/artikel', 'ArtikelController@index')->name('sidipi-artikel');
+Route::get('/penyakit', 'ArtikelController@index')->name('sidipi-penyakit');
+Route::get('/diagnosa', 'ArtikelController@index')->name('sidipi-diagnosa');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('Admin/home', 'HomeController@index')->name('home');

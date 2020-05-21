@@ -253,5 +253,127 @@ section.developer .container .figure .figure-img a:hover{
 footer.footer{
   height: 400px;
   background-color:#2F2E41;
+  padding-top: 50px;
+}
+
+footer.footer .footer-title{
+  font-weight: 700;
+  color: #00BFA6;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+footer.footer .footer-link{
+  text-transform: uppercase;
+  color: #EDEEF2;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+footer.footer .footer-link:hover{
+  color: #00BFA6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer.footer .footer-copyright{
+  color: #00BFA6;
 }
 /* footer */
+
+/* breadcrumb */
+.breadcrumb-row{
+  margin-top: 100px;
+}
+
+/* breadcrumb */
+
+
+/* article-top-row */
+.top-row .figure .figure-img{
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.top-row .figure .figure-img img{
+  width: 100%;
+  height: 100%;
+}
+
+ .top-row .figure .figure-img img:hover{
+    transform: scale(1.5);
+    transition: 1.5s;
+    cursor: pointer;
+  }
+/* article-top-row */
+
+/* article big-image */
+.row-main{
+  margin-top: 50px;
+  margin-bottom:50px ;
+}
+
+.row-main .big-image .figure .figure-img{
+  width: 700px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 60px;
+}
+
+.row-main .big-image .figure .figure-img img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.row-main .big-image .figure .figure-img img:hover{
+  transform: scale(1.5);
+  transition: 1.5s;
+  cursor: pointer;
+}
+/* article big-image */
+
+/* article-medium-image */
+.row-main .medium-image .figure .figure-img{
+  width: 700px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 60px;
+}
+
+.row-main .medium-image .figure .figure-img img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.row-main .medium-image .figure .figure-img img:hover{
+  transform: scale(1.5);
+  transition: 1.5s;
+  cursor: pointer;
+}
+/* article-medium-image */
+
+
+/* article-long-image */
+.row-main .long-image .figure .figure-img{
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 60px;
+}
+
+.row-main .long-image .figure .figure-img img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.row-main .long-image .figure .figure-img img:hover{
+  transform: scale(1.5);
+  transition: 1.5s;
+  cursor: pointer;
+}
+/* article-long-image */
