@@ -20,6 +20,20 @@ body{
     font-weight: 700;
 }
 
+.navbar-artikel{
+  margin-top: 60px;
+  height: 30px;
+  background-color: #C4C4C4;
+  text-transform: uppercase;
+}
+.navbar-artikel .container a{
+  color: #2F2E41 !important;
+}
+
+
+.navbar-artikel .container .popular{
+color: #FF1818;
+}
 /* navbar section */
 
 /* carouseel section */

@@ -17,6 +17,7 @@
 
 <body>
     <!-- navbar -->
+    @if(Request::url() === route('sidipi-artikel'))
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#"> <img src="{{url('Home/assets/img/LOGO.png')}}" alt=""> </a>
@@ -34,6 +35,35 @@
             </div>
         </div>
     </nav>
+    <nav class="navbar navbar-artikel navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="nav-item nav-link" href="{{route('sidipi-home')}}"> <span class="popular">Popular</span></a>
+            <a class="nav-item nav-link" href="{{route('sidipi-artikel')}}">Info Kesehatan</a>
+            <a class="nav-item nav-link" href="{{route('sidipi-penyakit')}}">CoronaVirus</a>
+            <a class="nav-item nav-link" href="{{route('sidipi-diagnosa')}}">Tips Hidup Sehat</a>
+        </div>
+    </nav>
+    @else
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"> <img src="{{url('Home/assets/img/LOGO.png')}}" alt=""> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="{{route('sidipi-home')}}">HOME</a>
+                    <a class="nav-item nav-link" href="{{route('sidipi-artikel')}}">ARTIKEL</a>
+                    <a class="nav-item nav-link" href="{{route('sidipi-penyakit')}}">PENYAKIT</a>
+                    <a class="nav-item nav-link" href="{{route('sidipi-diagnosa')}}">DIAGNOSA</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    @endif
+
+
     <!-- navbar -->
     @yield('content')
 
