@@ -401,3 +401,32 @@ section.single-article .row-isi p{
   font-size: 20px;
 }
 /* single-article */
+
+
+/* artikel-penyakit */
+section.artikel-penyakit{
+padding-bottom: 100px;
+}
+
+section.artikel-penyakit .figure{
+  margin: 30px 62px;
+}
+section.artikel-penyakit .figure .figure-img{
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+section.artikel-penyakit .figure .figure-img img{
+  width: 100%;
+  height: 100%;
+}
+
+
+section.artikel-penyakit .figure .figure-img img:hover{
+  transform: scale(1.5);
+  transition: 1.5s;
+  cursor: pointer;
+}
+/* artikel-penyakit */
