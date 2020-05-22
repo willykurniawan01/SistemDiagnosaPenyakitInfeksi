@@ -90,7 +90,7 @@
                             <div class="figure-img">
                                 <img src="{{url('Home/assets/img/Rectangle 8.png')}}"
                                     class="figure-img img-fluid rounded" alt="...">
-                                <a class="d-flex" href="#"><img class="align-self-center m-auto"
+                            <a class="d-flex" href="{{route('sidipi-single',['id'=>1])}}"><img class="align-self-center m-auto"
                                         src="{{url('Home/assets/img/see-icon.png')}}" alt=""></a>
                             </div>
                             <figcaption class="figure-caption">A caption for the above image.</figcaption>

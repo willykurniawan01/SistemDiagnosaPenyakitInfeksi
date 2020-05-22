@@ -377,3 +377,27 @@ footer.footer .footer-copyright{
   cursor: pointer;
 }
 /* article-long-image */
+
+
+/* single-article */
+section.single-article{
+  padding-bottom: 100px;
+}
+
+section.single-article .row-judul h4{
+  font-size: 45px;
+}
+section.single-article .row-img-single .img-single{
+  width: 100%;
+  height: 300px;
+  border: 1px solid black;
+}
+
+section.single-article .row-isi p{
+  font-size: 20px;
+}
+
+.sumber{
+  font-size: 20px;
+}
+/* single-article */

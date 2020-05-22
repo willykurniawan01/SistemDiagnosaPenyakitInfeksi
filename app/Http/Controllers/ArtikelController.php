@@ -45,7 +45,7 @@ class ArtikelController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Home.single-artikel');
     }
 
     /**
