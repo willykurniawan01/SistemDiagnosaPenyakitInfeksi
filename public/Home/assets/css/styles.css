@@ -7,7 +7,7 @@ body{
 }
 
 .navbar a{
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 50px;
     color: #00BFA6 !important;
 }
@@ -481,3 +481,26 @@ section.bio .row-bio p{
  font-size: 18px;
 }
 /* section developer */
+
+/* section hasil-diagnosa */
+section.hasil-diagnosa .hasil-diagnosa h4{
+  font-size: 40px;
+  font-weight: 700;
+  color: #2F2E41;
+}
+
+
+section.hasil-diagnosa .saran h4{
+color: #2F2E41;
+font-weight: 700;
+font-size: 30px;
+}
+
+section.hasil-diagnosa .saran{
+  margin: 50px 0;
+}
+
+section.hasil-diagnosa .img{
+  margin-bottom: 100px;
+}
+/* section hasil-diagnosa */

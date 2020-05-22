@@ -5,10 +5,10 @@
 {{-- section carousel --}}
 <section class="carousel">
 
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
 
-            <div class="carousel-item active">
+            <div class="carousel-item active" data-interval="2000">
                 <div class="container">
                     <div class="row mt-5">
                         <div class="col-12 mt-5 mt-md-0 col-md-6 d-flex">
@@ -59,6 +59,14 @@
             </div>
 
         </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
     </div>
 
     <div class="row justify-content-center">
