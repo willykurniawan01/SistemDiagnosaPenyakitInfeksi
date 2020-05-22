@@ -430,3 +430,54 @@ section.artikel-penyakit .figure .figure-img img:hover{
   cursor: pointer;
 }
 /* artikel-penyakit */
+
+/* section developer */
+section.developer-single{
+  height: 400px;
+  background-color: #C4C4C4;
+  margin-bottom: 100px;
+}
+
+section.developer-single .container-developer{
+  margin-top: 400px;
+}
+
+
+section.developer-single .container-developer .row-developer .info{
+margin-left: -40px;
+text-align: center;
+}
+
+section.developer-single .container-developer .row-developer .info .name{
+color: #2F2E41;
+font-size: 40px;
+font-family: Lora;
+}
+
+section.developer-single .container-developer .row-developer .info .role{
+color: #00BFA6;
+font-size: 30px;
+font-family: Lora;
+}
+
+section.developer-single .container-developer .row-developer img{
+  border: 3px solid #00BFA6;
+  width: 200px;
+  height: 200px;
+}
+
+
+section.bio{
+  margin:200px 0;
+}
+
+section.bio .row-judul h4{
+  font-size: 40px;
+  font-weight: 700;
+  color: #00BFA6;
+}
+
+section.bio .row-bio p{
+ font: ;
+}
+/* section developer */

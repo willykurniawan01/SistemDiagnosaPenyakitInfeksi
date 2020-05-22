@@ -361,7 +361,7 @@
             <figure class="figure">
                 <div class="figure-img">
                     <img src="{{url('Home/assets/img/developer.png')}}" class="img-fluid rounded-circle" alt="...">
-                    <a href=""></a>
+                <a href="{{route('sidipi-developer',['id'=>1])}}"></a>
                 </div>
                 <figcaption class="figure-caption">A caption for the above image.</figcaption>
             </figure>
