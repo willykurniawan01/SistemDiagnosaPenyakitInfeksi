@@ -14,7 +14,9 @@ class HomepageController extends Controller
      */
     public function index()
     {
-        $portal_informasi = DB::table('post')->where('kategori', 'like', '%portal informasi%')->get();
+        $portal_informasi = DB::table('post')->where('kategori', 'like', '%portal informasi%')
+        ->orderBy('id_post','DESC')
+        ->get();
         $post = DB::table('post')
             ->orderBy('id_post', 'DESC')
             ->paginate(3);
