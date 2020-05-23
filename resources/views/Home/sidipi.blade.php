@@ -65,6 +65,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
+                    @if(count($portal_informasi)>0)
                         @for($i=0;$i<3;$i++)
                         <figure class="figure">
                             <div class="figure-img">
@@ -76,12 +77,14 @@
                             <figcaption class="figure-caption text-center">{{$portal_informasi[$i]->judul}}</figcaption>
                         </figure>
                         @endfor
+                    @endif
                     </div>
 
                 </div>
     
                 <div class="carousel-item" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
+                    @if(count($portal_informasi)>3)
                         @for($i=3;$i<6;$i++)
                         <figure class="figure">
                             <div class="figure-img">
@@ -93,8 +96,8 @@
                             <figcaption class="figure-caption text-center">{{$portal_informasi[$i]->judul}}</figcaption>
                         </figure>
                         @endfor
+                    @endif
                     </div>
-
                 </div>
               
             </div>

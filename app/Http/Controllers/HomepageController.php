@@ -19,7 +19,6 @@ class HomepageController extends Controller
             ->orderBy('id_post', 'DESC')
             ->paginate(3);
 
-
         return view('Home.sidipi', [
             'post' => $post,
             'portal_informasi' => $portal_informasi
