@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class SidipiController extends Controller
+class HomepageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,21 @@ class SidipiController extends Controller
      */
     public function index()
     {
-        return view('Home.sidipi');
+        $portal_informasi = DB::table('post')->where('kategori', 'like', '%portal informasi%')->get();
+        $post = DB::table('post')
+            ->orderBy('id_post', 'DESC')
+            ->paginate(3);
+
+
+        return view('Home.sidipi', [
+            'post' => $post,
+            'portal_informasi' => $portal_informasi
+        ]);
+    }
+
+    public function article()
+    {
+        return view('Home.artikel');
     }
 
     /**
@@ -45,7 +60,7 @@ class SidipiController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Home.single-artikel');
     }
 
     /**

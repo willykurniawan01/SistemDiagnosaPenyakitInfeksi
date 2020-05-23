@@ -8,55 +8,26 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
 
-            <div class="carousel-item active" data-interval="2000">
+        @foreach ($post as $p)    
+        <div @if($loop->iteration==1) class="carousel-item active" @else class="carousel-item" @endif  data-interval="5000">
                 <div class="container">
                     <div class="row mt-5">
                         <div class="col-12 mt-5 mt-md-0 col-md-6 d-flex">
                             <div class="align-self-center">
-                                <h1 class="text-carousel">“Lorem ipsum dolorsit amet consectetur”</h1>
+                                <h1 class="text-carousel">“{{$p->judul}}”</h1>
                             </div>
                         </div>
 
                         <div class="col-md-6 d-none d-md-flex justify-content-end">
-                            <img src="{{url('Home/assets/img/Rectangle 5.png')}}" class="img-carousel img-fluid"
+                            <img src="{{url('storage/uploads/'.$p->img)}}" class="img-carousel img-fluid"
                                 alt="...">
                         </div>
                     </div>
                 </div>
             </div>
+        @endforeach
+        
 
-            <div class="carousel-item">
-                <div class="container">
-                    <div class="row mt-5">
-                        <div class="col-12 mt-5 mt-md-0 col-md-6 d-flex">
-                            <div class="align-self-center">
-                                <h1 class="text-carousel">“Lorem ipsum dolorsit amet consectetur”</h1>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 d-none d-md-flex justify-content-end">
-                            <img src="{{url('Home/assets/img/2.png')}}" class="img-carousel img-fluid" alt="...">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="container">
-                    <div class="row mt-5">
-                        <div class="col-12 mt-5 mt-md-0 col-md-6 d-flex">
-                            <div class="align-self-center">
-                                <h1 class="text-carousel">“Lorem ipsum dolorsit amet consectetur”</h1>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 d-none d-md-flex justify-content-end">
-                            <img src="{{url('Home/assets/img/Rectangle 5.png')}}" class="img-carousel img-fluid"
-                                alt="...">
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -94,41 +65,38 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
+                        @for($i=0;$i<3;$i++)
                         <figure class="figure">
                             <div class="figure-img">
-                                <img src="{{url('Home/assets/img/Rectangle 8.png')}}"
-                                    class="figure-img img-fluid rounded" alt="...">
+                            <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
+                                    class="figure-img img-fluid" alt="...">
                             <a class="d-flex" href="{{route('sidipi-single',['id'=>1])}}"><img class="align-self-center m-auto"
                                         src="{{url('Home/assets/img/see-icon.png')}}" alt=""></a>
                             </div>
-                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                            <figcaption class="figure-caption text-center">{{$portal_informasi[$i]->judul}}</figcaption>
                         </figure>
-
-                        <figure class="figure">
-                            <div class="figure-img">
-                                <img src="{{url('Home/assets/img/Rectangle 8.png')}}"
-                                    class="figure-img img-fluid rounded" alt="...">
-                                <a href="#"><a class="d-flex" href="#"><img class="align-self-center m-auto"
-                                            src="{{url('Home/assets/img/see-icon.png')}}" alt=""></a></a>
-                            </div>
-                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
-                        </figure>
-
-
-                        <figure class="figure">
-                            <div class="figure-img">
-                                <img src="{{url('Home/assets/img/Rectangle 8.png')}}"
-                                    class="figure-img img-fluid rounded" alt="...">
-                                <a href="#">
-                                    <a class="d-flex" href="#"><img class="align-self-center m-auto"
-                                            src="{{url('Home/assets/img/see-icon.png')}}" alt=""></a>
-                                </a>
-                            </div>
-                            <figcaption class="figure-caption">A caption for the above image.</figcaption>
-                        </figure>
+                        @endfor
                     </div>
 
                 </div>
+    
+                <div class="carousel-item" data-interval="10000">
+                    <div class="container d-flex justify-content-md-around">
+                        @for($i=3;$i<6;$i++)
+                        <figure class="figure">
+                            <div class="figure-img">
+                            <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
+                                    class="figure-img img-fluid" alt="...">
+                            <a class="d-flex" href="{{route('sidipi-single',['id'=>1])}}"><img class="align-self-center m-auto"
+                                        src="{{url('Home/assets/img/see-icon.png')}}" alt=""></a>
+                            </div>
+                            <figcaption class="figure-caption text-center">{{$portal_informasi[$i]->judul}}</figcaption>
+                        </figure>
+                        @endfor
+                    </div>
+
+                </div>
+              
             </div>
 
             <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">

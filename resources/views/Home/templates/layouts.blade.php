@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{url('Home/assets/css/styles.css')}}">
     <link rel="stylesheet" href="{{url('Admin/assets/css/style.css')}}">
     <link rel="icon" href="{{url('Home/assets/img/LOGO.png')}}">
+    <script type="text/javascript"> window.$crisp=[];window.CRISP_WEBSITE_ID="46ee0ed0-91d0-4ade-a2c9-f56ee500dd96";(function(){ d=document;s=d.createElement("script"); s.src="https://client.crisp.chat/l.js"; s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})(); </script>
     <title>SIDIPI - @yield('title')</title>
 </head>
 

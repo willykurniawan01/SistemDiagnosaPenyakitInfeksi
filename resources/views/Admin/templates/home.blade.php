@@ -19,10 +19,7 @@
     <!-- Custom styles for this template-->
     <link href="{{url('Admin/assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link href="{{url('Admin/assets/css/style.css')}}" rel="stylesheet">
-    <script src="https://cdn.tiny.cloud/1/qgyy3jwessjl5oicjlekr2ebfwkdn00er49uv240lfnrdh3l/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>tinymce.init({selector:'textarea'});</script>
-
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/decoupled-document/ckeditor.js"></script>
 </head>
 
 <body id="page-top">
@@ -96,7 +93,7 @@
 
                 <!-- Topbar -->
                 <nav class="navbar sticky-top navbar-expand navbar-light bg-sidipi3 topbar mb-4 static-top shadow">
-s
+
                     <!-- Topbar Search -->
                  
 
@@ -155,14 +152,6 @@ s
     <!-- Bootstrap core JavaScript-->
     <script src="{{url('Admin/assets/vendor/jquery/jquery.min.js')}}"></script>
     
-    
-    <script>
-        $(document).ready(function(){
-
-
-
-        });  
-    </script>
 
     <script src="{{url('Admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
@@ -171,7 +160,18 @@ s
 
     <!-- Custom scripts for all pages-->
     <script src="{{url('Admin/assets/js/sb-admin-2.min.js')}}"></script>
+    <script>
+        DecoupledEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                const toolbarContainer = document.querySelector('#toolbar-container');
     
+                toolbarContainer.appendChild(editor.ui.view.toolbar.element);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 </body>
 
 </html>

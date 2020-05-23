@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'SidipiController@index')->name('sidipi-home');
-Route::get('/artikel', 'ArtikelController@index')->name('sidipi-artikel');
+Route::get('/', 'HomepageController@index')->name('sidipi-home');
+Route::get('/artikel', 'HomepageController@article')->name('sidipi-artikel');
 Route::get('/penyakit', 'ArtikelPenyakitController@index')->name('sidipi-penyakit');
 Route::get('/diagnosa', 'DiagnosaController@index')->name('sidipi-diagnosa');
 Route::get('/diagnosa/hasil/{id}', 'DiagnosaController@show')->name('sidipi-hasil-diagnosa');
-Route::get('/artikel/{id}', 'ArtikelController@show')->name('sidipi-single');
+Route::get('/artikel/{id}', 'HomepageController@show')->name('sidipi-single');
 Route::get('/developer/{id}', 'DeveloperController@show')->name('sidipi-developer');
 
 Route::group(['middleware' => ['auth']], function () {

@@ -164,6 +164,6 @@ class PostController extends Controller
 
         DB::table('post')
             ->where('id_post', decrypt($id))->delete();
-        return redirect('Admin/post');
+        return redirect('Admin/post')->with(['success' => 'Berhasil Menghapus Post!']);
     }
 }
