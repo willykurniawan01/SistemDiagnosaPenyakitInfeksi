@@ -15,8 +15,30 @@ class GejalaController extends Controller
      */
     public function index()
     {
+        $relasi_gejala = DB::select('SELECT gejala.gejala,penyakit.nama_penyakit FROM gejala,penyakit WHERE gejala.id_gejala IN (SELECT id_gejala FROM penyakit_has_gejala) AND penyakit.id_penyakit IN (SELECT id_penyakit FROM penyakit_has_gejala)');
+
+        $penyakit = DB::table('penyakit')->get();
         $gejala = DB::table('gejala')->get();
-        return view('Admin.gejala', ['gejala' => $gejala]);
+        return view(
+            'Admin.gejala',
+            [
+                'gejala' => $gejala,
+                'penyakit' => $penyakit,
+                'relasi_gejala' => $relasi_gejala
+            ]
+        );
+    }
+
+
+    public function addRelation(Request $requests)
+    {
+        DB::table('penyakit_has_gejala')->insert(
+            [
+                'id_gejala' => $requests->input('gejala'),
+                'id_penyakit' => $requests->input('penyakit')
+            ]
+        );
+        return redirect('Admin/gejala');
     }
 
     /**

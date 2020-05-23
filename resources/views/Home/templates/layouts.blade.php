@@ -11,6 +11,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lora:700|Montserrat:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url('Home/assets/css/styles.css')}}">
+    <link rel="stylesheet" href="{{url('Admin/assets/css/style.css')}}">
     <link rel="icon" href="{{url('Home/assets/img/LOGO.png')}}">
     <title>SIDIPI - @yield('title')</title>
 </head>
@@ -20,7 +21,7 @@
     @if(Request::url() === route('sidipi-artikel'))
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"> <img src="{{url('Home/assets/img/LOGO.png')}}" alt=""> </a>
+        <a class="navbar-brand" href="{{route('sidipi-home')}}"> <img src="{{url('Home/assets/img/LOGO.png')}}" alt=""> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,7 +47,7 @@
     @else
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"> <img src="{{url('Home/assets/img/LOGO.png')}}" alt=""> </a>
+        <a class="navbar-brand" href="{{route('sidipi-home')}}"> <img src="{{url('Home/assets/img/LOGO.png')}}" alt=""> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

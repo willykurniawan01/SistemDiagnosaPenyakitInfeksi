@@ -96,8 +96,7 @@
 
                 <!-- Topbar -->
                 <nav class="navbar sticky-top navbar-expand navbar-light bg-sidipi topbar mb-4 static-top shadow">
-
-
+s
                     <!-- Topbar Search -->
                  
 
@@ -109,9 +108,6 @@
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-
-
-                            <div class="topbar-divider d-none d-sm-block"></div>
 
                             <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
