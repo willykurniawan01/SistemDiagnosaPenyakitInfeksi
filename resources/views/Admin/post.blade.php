@@ -59,7 +59,15 @@
                  <tbody class="text-dark font-weight-bold">
                     @foreach ($semua as $p)
                     <tr>
+                        @if(isset($_GET['page']))
+                            @if($_GET['page']==1)
+                             <th scope="row">{{$loop->iteration}}</th>
+                              @else
+                            <th scope="row">{{++$_GET['page']}}</th>
+                            @endif
+                        @else
                          <th scope="row">{{$loop->iteration}}</th>
+                        @endif
                             <td>{{$p->judul}}</td>
                             <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
                     <td><img class="img-thumbnail" width="300px" height="300px" src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>                    
