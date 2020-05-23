@@ -15,7 +15,7 @@ class GejalaController extends Controller
      */
     public function index()
     {
-        $relasi_gejala = DB::select('SELECT gejala.gejala,penyakit.nama_penyakit FROM gejala,penyakit WHERE gejala.id_gejala IN (SELECT id_gejala FROM penyakit_has_gejala) AND penyakit.id_penyakit IN (SELECT id_penyakit FROM penyakit_has_gejala)');
+        $relasi_gejala = DB::select('SELECT penyakit_has_gejala.id_relasi,gejala.gejala,penyakit.nama_penyakit FROM gejala,penyakit,penyakit_has_gejala WHERE gejala.id_gejala IN (SELECT id_gejala FROM penyakit_has_gejala) AND penyakit.id_penyakit IN (SELECT id_penyakit FROM penyakit_has_gejala)');
 
         $penyakit = DB::table('penyakit')->get();
         $gejala = DB::table('gejala')->get();
@@ -38,6 +38,14 @@ class GejalaController extends Controller
                 'id_penyakit' => $requests->input('penyakit')
             ]
         );
+        return redirect('Admin/gejala');
+    }
+
+
+    public function deleteRelation($id)
+    {
+        DB::table('penyakit_has_gejala')->where('id_relasi', '=', decrypt($id))->delete();
+
         return redirect('Admin/gejala');
     }
 
@@ -65,6 +73,7 @@ class GejalaController extends Controller
 
         return redirect('Admin/gejala');
     }
+
 
     /**
      * Display the specified resource.

@@ -57,6 +57,9 @@ Route::group(['middleware' => ['auth']], function () {
     //Tambah Relasi Gejala
     Route::post('Admin/gejala/relasi/add', 'GejalaController@addRelation')->name('tambah-relasi');
 
+    //Hapus Relasi Gejala
+    Route::get('Admin/gejala/relasi/hapus/{id}', 'GejalaController@deleteRelation')->name('hapus-relasi-gejala');
+
     //Tambah Post
     Route::post('Admin/post/input', 'PostController@store')->name('input-post');
 

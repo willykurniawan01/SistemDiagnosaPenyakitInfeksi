@@ -77,7 +77,7 @@
                                 <td>{{$rg->nama_penyakit}}</td>
                                 <td>
                                     <a href="#" class="btn badge badge-success mr-1">Edit</a>
-                                    <a href="{{route('hapus-gejala',['id'=>encrypt($g->id_gejala)])}}"
+                                    <a href="{{route('hapus-relasi-gejala',['id'=>encrypt($rg->id_relasi)])}}"
                                         class="badge badge-danger">Hapus</a>
                                 </td>
                             </tr>
