@@ -17,13 +17,19 @@ class HomepageController extends Controller
         $portal_informasi = DB::table('post')->where('kategori', 'like', '%portal informasi%')
         ->orderBy('id_post','DESC')
         ->get();
+        $info_kesehatan = DB::table('post')->where('kategori', 'like', '%info kesehatan%')
+        ->orderBy('id_post','DESC')
+        ->paginate(3);
+        
+       
         $post = DB::table('post')
             ->orderBy('id_post', 'DESC')
             ->paginate(3);
 
         return view('Home.sidipi', [
             'post' => $post,
-            'portal_informasi' => $portal_informasi
+            'portal_informasi' => $portal_informasi,
+            'info_kesehatan'=>$info_kesehatan
         ]);
     }
 

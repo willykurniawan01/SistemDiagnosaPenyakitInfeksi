@@ -95,7 +95,7 @@ class PostController extends Controller
             'img' => $fileNameToStore
         ]);
 
-        return redirect('Admin/post');
+        return redirect('Admin/post')->with(['success'=>'Berhasil Menambahkan Postingan Baru!']);
     }
 
     /**
@@ -138,7 +138,7 @@ class PostController extends Controller
                 'isi' => $request->input('isi'),
                 'img' => $request->input('img')
             ]);
-        return redirect('Admin/post');
+        return redirect('Admin/post')->with(['success'=>'Berhasil Edit Post!']);
     }
 
     /**

@@ -23,6 +23,7 @@ Route::get('/diagnosa/hasil/{id}', 'DiagnosaController@show')->name('sidipi-hasi
 Route::get('/artikel/{id}', 'HomepageController@show')->name('sidipi-single');
 Route::get('/developer/{id}', 'DeveloperController@show')->name('sidipi-developer');
 
+
 Route::group(['middleware' => ['auth']], function () {
     Route::get('Admin/home', 'HomeController@index')->name('home');
     Route::get('Admin/penyakit', 'PenyakitController@index')->name('penyakit');

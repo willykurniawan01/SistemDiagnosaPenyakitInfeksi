@@ -130,8 +130,9 @@
 
                 </nav>
                 <!-- End of Topbar -->
-
+                <div class="container">
                 @yield('content')
+                </div>
 
 
             </div>
