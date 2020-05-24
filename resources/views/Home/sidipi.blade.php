@@ -204,7 +204,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row justify-content-end">
+                        <div class="row justify-content-center">
                             <div class="col-2">
                             <a href="{{route('sidipi-single',['id'=>encrypt($i->id_post)])}}" class="form-control btn text-white btn-sidipi">
                                     Selengkapnya
