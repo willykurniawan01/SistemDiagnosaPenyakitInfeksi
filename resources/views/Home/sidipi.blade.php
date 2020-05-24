@@ -2,11 +2,7 @@
 
 {{-- section carousel --}}
 <section class="carousel">
-    <div
-        id="carouselExampleControls"
-        class="carousel slide"
-        data-ride="carousel"
-    >
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             @foreach ($post as $p)
             <div @if($loop->
@@ -14,41 +10,29 @@
                 class="carousel-item" @endif data-interval="5000">
                 <div class="container">
                     <div class="row mt-5">
-                        <div class="col-12 mt-5 mt-md-0 col-md-6 d-flex">
+                        <div class="col-12 justify-content-center mt-5 mt-md-0 col-md-6 d-flex">
                             <div class="align-self-center">
-                                <h1 class="text-carousel">“{{$p->judul}}”</h1>
+                                <h1 class="judul text-sidipi font-weight-bolder">“{{$p->judul}}”</h1>
+                                <p class="text-white text-justify">
+                                    {{(str_word_count($p->isi))>60 ? substr($p->isi,0,200).' ...':$p->isi}}</p>
+                                <a href="{{route('sidipi-single',['id'=>encrypt($p->id_post)])}}"
+                                    class="btn btn-sidipi">Selengkapnya</a>
                             </div>
                         </div>
 
-                        <div
-                            class="col-md-6 d-none d-md-flex justify-content-end"
-                        >
-                            <img
-                                src="{{url('storage/uploads/'.$p->img)}}"
-                                class="img-carousel img-fluid"
-                                alt="..."
-                            />
+                        <div class="col-md-6 d-none d-md-flex justify-content-center">
+                            <img src="{{url('storage/uploads/'.$p->img)}}" class="img-carousel img-fluid" alt="..." />
                         </div>
                     </div>
                 </div>
             </div>
             @endforeach
         </div>
-        <a
-            class="carousel-control-prev"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="prev"
-        >
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
-        <a
-            class="carousel-control-next"
-            href="#carouselExampleControls"
-            role="button"
-            data-slide="next"
-        >
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
@@ -57,12 +41,7 @@
     <div class="row justify-content-center">
         <div class="col-10 col-md-6">
             <form class="form-inline search-form">
-                <input
-                    class="form-control"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                />
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
                 <button class="btn" type="submit">Cari</button>
             </form>
         </div>
@@ -79,88 +58,70 @@
     </div>
 
     <div class="caroussel d-none d-md-block">
-        <div
-            id="carouselExampleInterval"
-            class="carousel slide"
-            data-ride="carousel"
-        >
+        <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
-                        @if(count($portal_informasi)>0) @for($i=0;$i<3;$i++)
-                        <figure class="figure">
-                            <div class="figure-img">
-                                <img
-                                    src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
-                                    class="figure-img img-fluid"
-                                    alt="..."
-                                />
-                                <a
-                                    class="d-flex"
-                                    href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"
-                                    ><img
-                                        class="align-self-center m-auto"
-                                        src="{{
+                        @if(count($portal_informasi)>0) @for($i=0;$i<3;$i++) <div class="card py-4 px-4 my-3"
+                            data-aos="fade-right" data-aos-delay="500">
+                            <figure class="figure">
+                                <div class="figure-img">
+                                    <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
+                                        class="figure-img img-fluid" alt="..." />
+                                    <a class="d-flex"
+                                        href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"><img
+                                            class="align-self-center m-auto" src="{{
                                             url('Home/assets/img/see-icon.png')
-                                        }}"
-                                        alt=""
-                                /></a>
-                            </div>
-                            <figcaption class="figure-caption text-center">
-                                {{$portal_informasi[$i]->judul}}
-                            </figcaption>
-                        </figure>
-                        @endfor @endif
+                                        }}" alt="" /></a>
+                                </div>
+                                <figcaption class="figure-caption text-sidipi2 fs-20">
+                                    <h4 class="judul">{{$portal_informasi[$i]->judul}}</h4>
+                                    <p> {{(str_word_count($portal_informasi[$i]->isi))>60 ? substr($portal_informasi[$i]->isi,0,20):$portal_informasi[$i]->isi}}
+                                        ...</p>
+                                    <a href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"
+                                        class="btn btn-sidipi">Selengkapnya</a>
+                                </figcaption>
+                            </figure>
                     </div>
-                </div>
-
-                <div class="carousel-item" data-interval="10000">
-                    <div class="container d-flex justify-content-md-around">
-                        @if(count($portal_informasi)>3) @for($i=3;$i<6;$i++)
-                        <figure class="figure">
-                            <div class="figure-img">
-                                <img
-                                    src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
-                                    class="figure-img img-fluid"
-                                    alt="..."
-                                />
-                                <a
-                                    class="d-flex"
-                                    href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"
-                                    ><img
-                                        class="align-self-center m-auto"
-                                        src="{{
-                                            url('Home/assets/img/see-icon.png')
-                                        }}"
-                                        alt=""
-                                /></a>
-                            </div>
-                            <figcaption class="figure-caption text-center">
-                                {{$portal_informasi[$i]->judul}}
-                            </figcaption>
-                        </figure>
-                        @endfor @endif
-                    </div>
+                    @endfor @endif
                 </div>
             </div>
 
-            <a
-                class="carousel-control-prev"
-                href="#carouselExampleInterval"
-                role="button"
-                data-slide="prev"
-            >
-                <img src="{{ url('Home/assets/img/NEXT.png') }}" alt="" />
-            </a>
-            <a
-                class="carousel-control-next"
-                href="#carouselExampleInterval"
-                role="button"
-                data-slide="next"
-            >
-                <img src="{{ url('Home/assets/img/NEXT2.png') }}" alt="" />
-            </a>
+            <div class="carousel-item" data-interval="10000">
+                <div class="container d-flex justify-content-md-around">
+                    @if(count($portal_informasi)>3) @for($i=3;$i<6;$i++)<div class="card py-4 px-4 my-3"
+                        data-aos="fade-right" data-aos-delay="500">
+                        <figure class="figure">
+                            <div class="figure-img">
+                                <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
+                                    class="figure-img img-fluid" alt="..." />
+                                <a class="d-flex"
+                                    href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"><img
+                                        class="align-self-center m-auto" src="{{
+                                            url('Home/assets/img/see-icon.png')
+                                        }}" alt="" /></a>
+                            </div>
+                            <figcaption class="figure-caption text-sidipi2 fs-20">
+                                <h4 class="judul">{{$portal_informasi[$i]->judul}}</h4>
+                                <p> {{(str_word_count($portal_informasi[$i]->isi))>60 ? substr($portal_informasi[$i]->isi,0,20):$portal_informasi[$i]->isi}}
+                                    ...</p>
+                                <a href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"
+                                    class="btn btn-sidipi">Selengkapnya</a>
+                            </figcaption>
+                        </figure>
+                </div>
+                @endfor @endif
+            </div>
         </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+        <img src="{{ url('Home/assets/img/NEXT.png') }}" alt="" />
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+        <img src="{{ url('Home/assets/img/NEXT2.png') }}" alt="" />
+    </a>
+    </div>
     </div>
 </section>
 {{-- section portal-informasi --}}
@@ -175,11 +136,7 @@
 
     <!-- info-kesehatan-carousel -->
     <div class="info-carousel">
-        <div
-            id="carouselExampleIndicators"
-            class="carousel slide"
-            data-ride="carousel"
-        >
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 @foreach($info_kesehatan as $i)
                 <div @if($loop->
@@ -188,25 +145,23 @@
                     <div class="container">
                         <div class="row justify-content-around">
                             <div class="col-4 d-flex">
-                                <img
-                                    class="align-self-center img-carousel"
-                                    src="{{url('storage/uploads/'.$i->img)}}"
-                                    alt=""
-                                />
+                                <img class="align-self-center img-carousel" src="{{url('storage/uploads/'.$i->img)}}"
+                                    alt="" />
                             </div>
 
                             <div class="col-8">
                                 <h4 class="judul">
                                     {{$i->judul}}
                                 </h4>
-                                <p class="text-justify">
+                                <p class="text-justify" data-aos="fade-left" data-aos-delay="300">
                                     {{(str_word_count($i->isi))>60 ? substr($i->isi,0,1000):$i->isi}}
                                 </p>
                             </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-2">
-                            <a href="{{route('sidipi-single',['id'=>encrypt($i->id_post)])}}" class="form-control btn text-white btn-sidipi">
+                                <a href="{{route('sidipi-single',['id'=>encrypt($i->id_post)])}}"
+                                    class="btn btn-sidipi my-3">
                                     Selengkapnya
                                 </a>
                             </div>
@@ -215,28 +170,12 @@
                 </div>
                 @endforeach
             </div>
-            <a
-                class="carousel-control-prev"
-                href="#carouselExampleIndicators"
-                role="button"
-                data-slide="prev"
-            >
-                <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                ></span>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a
-                class="carousel-control-next"
-                href="#carouselExampleIndicators"
-                role="button"
-                data-slide="next"
-            >
-                <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                ></span>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
         </div>
@@ -255,95 +194,79 @@
     </div>
 
     <div class="caroussel d-none d-md-block">
-        <div
-            id="carouselExampleFade"
-            class="carousel slide"
-            data-ride="carousel"
-        >
+        <div id="carouselExampleFade" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
-                    @if(isset($corona_virus) AND count($corona_virus)>0) 
-                        @for($i=0;$i<3;$i++)
-                        <figure class="figure">
-                            <div class="figure-img">
-                                <img
-                                    src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
-                                    class="figure-img img-fluid rounded"
-                                    alt="..."
-                                />
-                                <a class="d-flex" href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"
-                                    ><img
-                                        class="align-self-center m-auto"
-                                        src="{{
+                        @if(isset($corona_virus) AND count($corona_virus)>0)
+                        @for($i=0;$i<3;$i++) <div class="card py-4 px-4 my-3" data-aos="fade-left" data-aos-delay="500">
+                            <figure class="figure">
+                                <div class="figure-img">
+                                    <img src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
+                                        class="figure-img img-fluid rounded" alt="..." />
+                                    <a class="d-flex"
+                                        href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"><img
+                                            class="align-self-center m-auto" src="{{
                                             url('Home/assets/img/see-icon.png')
-                                        }}"
-                                        alt=""
-                                /></a>
-                            </div>
-                            <figcaption class="figure-caption text-center">
-                               {{$corona_virus[$i]->judul}}
-                            </figcaption>
-                        </figure>
-                        @endfor
-                    @endif
+                                        }}" alt="" /></a>
+                                </div>
+                                <figcaption class="figure-caption text-sidipi2 fs-20">
+                                    <h4 class="judul">{{$corona_virus[$i]->judul}}</h4>
+                                    <p> {{(str_word_count($corona_virus[$i]->isi))>60 ? substr($corona_virus[$i]->isi,0,20):$corona_virus[$i]->isi}}
+                                        ...</p>
+                                    <a href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"
+                                        class="btn btn-sidipi">Selengkapnya</a>
+                                </figcaption>
+                            </figure>
                     </div>
-                </div>
-
-                <div class="carousel-item" data-interval="5000">
-                    <div class="container d-flex justify-content-md-around">
-                    @if(isset($corona_virus) AND count($corona_virus)>3)
-                    @for($i=3;$i<6;$i++)
-                        <figure class="figure">
-                            <div class="figure-img">
-                                <img
-                                    src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
-                                    class="figure-img img-fluid rounded"
-                                    alt="..."
-                                />
-                                <a class="d-flex" href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"
-                                    ><img
-                                        class="align-self-center m-auto"
-                                        src="{{
-                                            url('Home/assets/img/see-icon.png')
-                                        }}"
-                                        alt=""
-                                /></a>
-                            </div>
-                            <figcaption class="figure-caption text-center">
-                               {{$corona_virus[$i]->judul}}
-                            </figcaption>
-                        </figure>
-                        @endfor
+                    @endfor
                     @endif
-                    </div>
                 </div>
             </div>
 
-            <a
-                class="carousel-control-prev"
-                href="#carouselExampleFade"
-                role="button"
-                data-slide="prev"
-            >
-                <img src="{{ url('Home/assets/img/NEXT.png') }}" alt="" />
-            </a>
-            <a
-                class="carousel-control-next"
-                href="#carouselExampleFade  "
-                role="button"
-                data-slide="next"
-            >
-                <img src="{{ url('Home/assets/img/NEXT2.png') }}" alt="" />
-            </a>
+            <div class="carousel-item" data-interval="5000">
+                <div class="container d-flex justify-content-md-around">
+                    @if(isset($corona_virus) AND count($corona_virus)>3)
+                    @for($i=3;$i<6;$i++) <div class="card py-4 px-4 my-3" data-aos="fade-left" data-aos-delay="500">
+                        <figure class="figure">
+                            <div class="figure-img">
+                                <img src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
+                                    class="figure-img img-fluid rounded" alt="..." />
+                                <a class="d-flex"
+                                    href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"><img
+                                        class="align-self-center m-auto" src="{{
+                                            url('Home/assets/img/see-icon.png')
+                                        }}" alt="" /></a>
+                            </div>
+                            <figcaption class="figure-caption text-sidipi2 fs-20">
+                                <h4 class="judul">{{$corona_virus[$i]->judul}}</h4>
+                                <p> {{(str_word_count($corona_virus[$i]->isi))>60 ? substr($corona_virus[$i]->isi,0,20):$corona_virus[$i]->isi}}
+                                    ...</p>
+                                <a href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"
+                                    class="btn btn-sidipi">Selengkapnya</a>
+                            </figcaption>
+                        </figure>
+                </div>
+                @endfor
+                @endif
+            </div>
         </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <img src="{{ url('Home/assets/img/NEXT.png') }}" alt="" />
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade  " role="button" data-slide="next">
+        <img src="{{ url('Home/assets/img/NEXT2.png') }}" alt="" />
+    </a>
+    </div>
     </div>
 </section>
 {{-- section corona virus --}}
 
 <!-- section Penyakit infeksi -->
 <section class="penyakit-infeksi">
-    <div class="container penyakit-container">
+    <div class="container penyakit-container my-2">
         <div class="row">
             <h4>{{$penyakit_infeksi[0]->judul}}</h4>
         </div>
@@ -367,7 +290,7 @@
 
 <!-- section developer -->
 <section class="developer">
-    <div class="container developer-container">
+    <div class="container developer-container mb-3">
         <div class="row">
             <h4>Developer</h4>
         </div>
@@ -377,11 +300,7 @@
         <div class="row justify-content-around">
             <figure class="figure">
                 <div class="figure-img">
-                    <img
-                        src="{{ url('Home/assets/img/developer.png') }}"
-                        class="img-fluid rounded-circle"
-                        alt="..."
-                    />
+                    <img src="{{ url('Home/assets/img/developer.png') }}" class="img-fluid rounded-circle" alt="..." />
                     <a href="{{route('sidipi-developer',['id'=>1])}}"></a>
                 </div>
                 <figcaption class="figure-caption">
@@ -390,11 +309,7 @@
             </figure>
             <figure class="figure">
                 <div class="figure-img">
-                    <img
-                        src="{{ url('Home/assets/img/developer.png') }}"
-                        class="img-fluid rounded-circle"
-                        alt="..."
-                    />
+                    <img src="{{ url('Home/assets/img/developer.png') }}" class="img-fluid rounded-circle" alt="..." />
                     <a href=""></a>
                 </div>
                 <figcaption class="figure-caption">
@@ -403,11 +318,7 @@
             </figure>
             <figure class="figure">
                 <div class="figure-img">
-                    <img
-                        src="{{ url('Home/assets/img/developer.png') }}"
-                        class="img-fluid rounded-circle"
-                        alt="..."
-                    />
+                    <img src="{{ url('Home/assets/img/developer.png') }}" class="img-fluid rounded-circle" alt="..." />
                     <a href=""></a>
                 </div>
                 <figcaption class="figure-caption">

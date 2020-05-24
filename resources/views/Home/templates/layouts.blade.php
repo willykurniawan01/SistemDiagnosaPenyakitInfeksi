@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:700|Montserrat:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url('Home/assets/css/styles.css')}}">
     <link rel="stylesheet" href="{{url('Admin/assets/css/style.css')}}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="{{url('Home/assets/img/LOGO.png')}}">
     <script type="text/javascript"> window.$crisp=[];window.CRISP_WEBSITE_ID="46ee0ed0-91d0-4ade-a2c9-f56ee500dd96";(function(){ d=document;s=d.createElement("script"); s.src="https://client.crisp.chat/l.js"; s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})(); </script>
     <title>SIDIPI - @yield('title')</title>
@@ -174,6 +175,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>AOS.init();</script>
     <script src="js/script.js"></script>
 </body>
 
