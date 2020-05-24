@@ -15,13 +15,18 @@ class HomepageController extends Controller
     public function index()
     {
         $portal_informasi = DB::table('post')->where('kategori', 'like', '%portal informasi%')
-        ->orderBy('id_post','DESC')
-        ->get();
+            ->orderBy('id_post', 'DESC')
+            ->get();
         $info_kesehatan = DB::table('post')->where('kategori', 'like', '%info kesehatan%')
-        ->orderBy('id_post','DESC')
-        ->paginate(3);
-        
-       
+            ->orderBy('id_post', 'DESC')
+            ->paginate(3);
+
+        $corona_virus = DB::table('post')->where('kategori', 'like', '%corona virus%')->orderBy('id_post', 'DESC')->get();
+
+        $penyakit_infeksi = DB::table('post')->where('kategori', 'like', '%penyakit infeksi%')->paginate(1);
+
+
+
         $post = DB::table('post')
             ->orderBy('id_post', 'DESC')
             ->paginate(3);
@@ -29,7 +34,9 @@ class HomepageController extends Controller
         return view('Home.sidipi', [
             'post' => $post,
             'portal_informasi' => $portal_informasi,
-            'info_kesehatan'=>$info_kesehatan
+            'info_kesehatan' => $info_kesehatan,
+            'corona_virus' => $corona_virus,
+            'penyakit_infeksi' => $penyakit_infeksi
         ]);
     }
 

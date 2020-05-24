@@ -4,7 +4,7 @@
 @section('content')
 <div class="container-fluid">
 @foreach ($post as $p)
-<form method="post" action="{{route('update-post',['id'=>encrypt($p->id_post)])}}">
+<form method="post" enctype="multipart/form-data" action="{{route('update-post',['id'=>encrypt($p->id_post)])}}">
     @csrf
         <div class="form-group">
             <label for="exampleFormControlInput1">Judul Postingan</label>
@@ -28,7 +28,7 @@
         <div class="form-group">
             <label>Image</label>
             <div class="custom-file">
-                <input value="" name="img" type="file" class="custom-file-input" id="validatedCustomFile" required>
+                <input value="{{$p->img}}" name="img" type="file" class="custom-file-input" id="validatedCustomFile">
                 <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
                 <div class="invalid-feedback">Example invalid custom file feedback</div>
             </div>  

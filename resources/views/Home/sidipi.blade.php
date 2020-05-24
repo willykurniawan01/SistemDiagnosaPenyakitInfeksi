@@ -256,19 +256,19 @@
 
     <div class="caroussel d-none d-md-block">
         <div
-            id="carouselExampleInterval"
+            id="carouselExampleFade"
             class="carousel slide"
             data-ride="carousel"
         >
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
+                    @if(isset($corona_virus) AND count($corona_virus)>0) 
+                        @for($i=0;$i<3;$i++)
                         <figure class="figure">
                             <div class="figure-img">
                                 <img
-                                    src="{{
-                                        url('Home/assets/img/Rectangle 8.png')
-                                    }}"
+                                    src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
                                     class="figure-img img-fluid rounded"
                                     alt="..."
                                 />
@@ -281,70 +281,48 @@
                                         alt=""
                                 /></a>
                             </div>
-                            <figcaption class="figure-caption">
-                                A caption for the above image.
+                            <figcaption class="figure-caption text-center">
+                               {{$corona_virus[$i]->judul}}
                             </figcaption>
                         </figure>
+                        @endfor
+                    @endif
+                    </div>
+                </div>
 
+                <div class="carousel-item" data-interval="5000">
+                    <div class="container d-flex justify-content-md-around">
+                    @if(isset($corona_virus) AND count($corona_virus)>3)
+                    @for($i=3;$i<6;$i++)
                         <figure class="figure">
                             <div class="figure-img">
                                 <img
-                                    src="{{
-                                        url('Home/assets/img/Rectangle 8.png')
-                                    }}"
+                                    src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
                                     class="figure-img img-fluid rounded"
                                     alt="..."
                                 />
-                                <a href="#"
-                                    ><a class="d-flex" href="#"
-                                        ><img
-                                            class="align-self-center m-auto"
-                                            src="{{
-                                                url(
-                                                    'Home/assets/img/see-icon.png'
-                                                )
-                                            }}"
-                                            alt="" /></a
-                                ></a>
+                                <a class="d-flex" href="#"
+                                    ><img
+                                        class="align-self-center m-auto"
+                                        src="{{
+                                            url('Home/assets/img/see-icon.png')
+                                        }}"
+                                        alt=""
+                                /></a>
                             </div>
-                            <figcaption class="figure-caption">
-                                A caption for the above image.
+                            <figcaption class="figure-caption text-center">
+                               {{$corona_virus[$i]->judul}}
                             </figcaption>
                         </figure>
-
-                        <figure class="figure">
-                            <div class="figure-img">
-                                <img
-                                    src="{{
-                                        url('Home/assets/img/Rectangle 8.png')
-                                    }}"
-                                    class="figure-img img-fluid rounded"
-                                    alt="..."
-                                />
-                                <a href="#">
-                                    <a class="d-flex" href="#"
-                                        ><img
-                                            class="align-self-center m-auto"
-                                            src="{{
-                                                url(
-                                                    'Home/assets/img/see-icon.png'
-                                                )
-                                            }}"
-                                            alt=""
-                                    /></a>
-                                </a>
-                            </div>
-                            <figcaption class="figure-caption">
-                                A caption for the above image.
-                            </figcaption>
-                        </figure>
+                        @endfor
+                    @endif
                     </div>
                 </div>
             </div>
 
             <a
                 class="carousel-control-prev"
-                href="#carouselExampleInterval"
+                href="#carouselExampleFade"
                 role="button"
                 data-slide="prev"
             >
@@ -352,7 +330,7 @@
             </a>
             <a
                 class="carousel-control-next"
-                href="#carouselExampleInterval"
+                href="#carouselExampleFade  "
                 role="button"
                 data-slide="next"
             >
@@ -367,27 +345,19 @@
 <section class="penyakit-infeksi">
     <div class="container penyakit-container">
         <div class="row">
-            <h4>Apa itu penyakit infeksi?</h4>
+            <h4>{{$penyakit_infeksi[0]->judul}}</h4>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-3">
-                <img src="{{ url('Home/assets/img/virus2.png') }}" alt="" />
+                <img src="{{ url('storage/uploads/'.'/'.$penyakit_infeksi[0]->img) }}" alt="" />
             </div>
 
             <div class="col-9 d-flex">
                 <p class="text-justify align-self-center">
-                    Penyakit infeksi adalah masalah kesehatan yang disebabkan
-                    oleh organisme seperti virus, bakteri, jamur, dan parasit.
-                    Meski beberapa jenis organisme terdapat di tubuh dan
-                    tergolong tidak berbahaya, pada kondisi tertentu,
-                    organisme-organisme tersebut dapat menyerang dan menimbulkan
-                    gangguan kesehatan, yang bahkan berpotensi menyebabkan
-                    kematian. Infeksi dapat disebabkan oleh 4 organisme berbeda,
-                    yakni virus, bakteri, parasit, dan jamur. Masing-masing
-                    organisme dapat menimbulkan masalah kesehatan yang berbeda.
+                    {{$penyakit_infeksi[0]->isi}}
                 </p>
             </div>
         </div>

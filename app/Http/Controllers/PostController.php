@@ -95,7 +95,7 @@ class PostController extends Controller
             'img' => $fileNameToStore
         ]);
 
-        return redirect('Admin/post')->with(['success'=>'Berhasil Menambahkan Postingan Baru!']);
+        return redirect('Admin/post')->with(['success' => 'Berhasil Menambahkan Postingan Baru!']);
     }
 
     /**
@@ -130,15 +130,45 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //validasi file
+        $request->validate([
+            'img' => 'required|mimes:jpeg,jpg,png',
+        ]);
+
+
+        //upload file
+        if ($request->hasFile('img')) {
+            //Get filename with the extension
+            $fileNameWithExt = $request->file('img')->getClientOriginalName();
+
+            //Get just filename
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+            //get just extension
+            $extension = $request->file('img')->getClientOriginalExtension();
+
+            //Filename to store
+            $fileNameToStore = $fileName . '_' . time() . '.' . $extension;
+
+            //upload file
+            $path = $request->file('img')->storeAs('public/uploads', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimg.jpg';
+        }
+
+
+
+
         DB::table('post')
             ->where('id_post', decrypt($id))
             ->update([
                 'judul' => $request->input('judul'),
                 'kategori' => $request->input('kategori'),
                 'isi' => $request->input('isi'),
-                'img' => $request->input('img')
+                'img' => $fileNameToStore
             ]);
-        return redirect('Admin/post')->with(['success'=>'Berhasil Edit Post!']);
+
+        return redirect('Admin/post')->with(['success' => 'Berhasil Edit Post!']);
     }
 
     /**
