@@ -97,7 +97,7 @@
                                 />
                                 <a
                                     class="d-flex"
-                                    href="{{route('sidipi-single',['id'=>1])}}"
+                                    href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"
                                     ><img
                                         class="align-self-center m-auto"
                                         src="{{
@@ -126,7 +126,7 @@
                                 />
                                 <a
                                     class="d-flex"
-                                    href="{{route('sidipi-single',['id'=>1])}}"
+                                    href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"
                                     ><img
                                         class="align-self-center m-auto"
                                         src="{{
@@ -206,7 +206,7 @@
                         </div>
                         <div class="row justify-content-end">
                             <div class="col-2">
-                            <a href="{{route('sidipi-single',['id'=>encrypt($i->id_post)])}}" class="form-control btn btn-sidipi">
+                            <a href="{{route('sidipi-single',['id'=>encrypt($i->id_post)])}}" class="form-control btn text-white btn-sidipi">
                                     Selengkapnya
                                 </a>
                             </div>
@@ -272,7 +272,7 @@
                                     class="figure-img img-fluid rounded"
                                     alt="..."
                                 />
-                                <a class="d-flex" href="#"
+                                <a class="d-flex" href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"
                                     ><img
                                         class="align-self-center m-auto"
                                         src="{{
@@ -301,7 +301,7 @@
                                     class="figure-img img-fluid rounded"
                                     alt="..."
                                 />
-                                <a class="d-flex" href="#"
+                                <a class="d-flex" href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"
                                     ><img
                                         class="align-self-center m-auto"
                                         src="{{

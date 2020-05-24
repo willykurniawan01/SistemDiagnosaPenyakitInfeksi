@@ -74,7 +74,8 @@ class HomepageController extends Controller
      */
     public function show($id)
     {
-        return view('Home.single-artikel');
+        $post = DB::table('post')->where('id_post', '=', decrypt($id))->get();
+        return view('Home.single-artikel', ['post' => $post]);
     }
 
     /**
