@@ -42,7 +42,10 @@ class HomepageController extends Controller
 
     public function article()
     {
-        return view('Home.artikel');
+        $post = DB::table('post')
+            ->orderBy('id_post', 'DESC')
+            ->paginate(6);
+        return view('Home.artikel', ['post' => $post]);
     }
 
     /**

@@ -28,24 +28,24 @@ class ArtikelPenyakitController extends Controller
                     ->get();
             } else {
                 $data = DB::table('penyakit')
-                    ->paginate(6);
+                    ->get();
             }
 
             $total_row = $data->count();
             if ($total_row > 0) {
-                $delay = 400;
+                $delay = 300;
                 foreach ($data as $row) {
                     $output .= '    
-                    <figure class="figure" data-aos="zoom-out" data-aos-delay="' . $delay . '" >
+                    <figure class="figure" data-aos="zoom-out" data-aos-delay="' . $delay . '"  data-aos-easing="ease-in-out">
                         <div class="figure-img">
-                            <a href="#">
+                            <a href="' . route('sidipi-single-penyakit', ['id' => $row->id_penyakit]) . '">
                                 <img src="Home/assets/img/virus2.png" alt="...">
                             </a>
                         </div>
                         <figcaption class="figure-caption text-sidipi2 font-weight-bold text-center fs-20 text-uppercase">' . $row->nama_penyakit . '</figcaption>
                     </figure>
                    ';
-                    $delay += 600;
+                    $delay += 300;
                 }
             } else {
                 $output = '
@@ -62,26 +62,6 @@ class ArtikelPenyakitController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.

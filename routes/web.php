@@ -18,12 +18,14 @@ Auth::routes();
 Route::get('/', 'HomepageController@index')->name('sidipi-home');
 Route::get('/artikel', 'HomepageController@article')->name('sidipi-artikel');
 Route::get('/penyakit', 'ArtikelPenyakitController@index')->name('sidipi-penyakit');
+Route::get('/penyakit/live', 'ArtikelPenyakitController@live_search')->name('live_search');
+Route::get('penyakit/{id}', function ($id) {
+    return $id;
+})->name('sidipi-single-penyakit');
 Route::get('/diagnosa', 'DiagnosaController@index')->name('sidipi-diagnosa');
 Route::get('/diagnosa/hasil/{id}', 'DiagnosaController@show')->name('sidipi-hasil-diagnosa');
 Route::get('/artikel/{id}', 'HomepageController@show')->name('sidipi-single');
 Route::get('/developer/{id}', 'DeveloperController@show')->name('sidipi-developer');
-
-Route::get('/penyakit/live', 'ArtikelPenyakitController@live_search')->name('live_search');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('Admin/home', 'HomeController@index')->name('home');
