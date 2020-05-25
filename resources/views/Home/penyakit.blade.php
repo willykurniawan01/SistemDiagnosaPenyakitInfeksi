@@ -12,55 +12,20 @@
             </nav>
         </div>
 
-        <div class="row row-search justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-6">
                 <div class="input-group input-group-lg">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-sidipi" id="inputGroup-sizing-lg"><img src="{{url('Home/assets/img/search-icon.png')}}" alt=""></span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input"
+                    <input type="text" id="live_search" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-lg">
                 </div>
             </div>
         </div>
 
-        <div class="row row-penyakit mt-5 justify-content-start">
-            <figure class="figure">
-                <div class="figure-img">
-                    <img src="{{url('Home/assets/img/2.png')}}" class="" alt="...">
-                </div>
-                <figcaption class="figure-caption">A caption for the above image.</figcaption>
-            </figure>
-            <figure class="figure">
-                <div class="figure-img">
-                    <img src="{{url('Home/assets/img/2.png')}}" class="" alt="...">
-                </div>
-                <figcaption class="figure-caption">A caption for the above image.</figcaption>
-            </figure>
-            <figure class="figure">
-                <div class="figure-img">
-                    <img src="{{url('Home/assets/img/2.png')}}" class="" alt="...">
-                </div>
-                <figcaption class="figure-caption">A caption for the above image.</figcaption>
-            </figure>
-            <figure class="figure">
-                <div class="figure-img">
-                    <img src="{{url('Home/assets/img/2.png')}}" class="" alt="...">
-                </div>
-                <figcaption class="figure-caption">A caption for the above image.</figcaption>
-            </figure>
-            <figure class="figure">
-                <div class="figure-img">
-                    <img src="{{url('Home/assets/img/2.png')}}" class="" alt="...">
-                </div>
-                <figcaption class="figure-caption">A caption for the above image.</figcaption>
-            </figure>
-            <figure class="figure">
-                <div class="figure-img">
-                    <img src="{{url('Home/assets/img/2.png')}}" class="" alt="...">
-                </div>
-                <figcaption class="figure-caption">A caption for the above image.</figcaption>
-            </figure>
+        <div id="result" class="row row-penyakit mt-5 ">
+           
         </div>
     </div>
 </section>

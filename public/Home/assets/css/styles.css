@@ -6,6 +6,7 @@
 
 body {
     font-family: Montserrat;
+    overflow-x: hidden;
 }
 /* navbar section */
 .navbar {
@@ -44,7 +45,7 @@ body {
 /* carouseel section */
 section.carousel {
     background-color: #3f3d56;
-    height: 400px;
+    height: 450px;
     margin-top: 60px;
 }
 
@@ -65,9 +66,13 @@ section.carousel .img-carousel {
 /* caroussel section */
 
 /* searchbox */
+
+.row-search{
+    margin-top: -65px;
+}
+
 .search-form {
     padding: 0px;
-    margin-top: 160px;
     border: 5px solid #00bfa6;
     border-radius: 10px;
     box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.5);

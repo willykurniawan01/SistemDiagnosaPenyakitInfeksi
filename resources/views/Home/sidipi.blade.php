@@ -37,17 +37,17 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
-    <div class="row justify-content-center">
-        <div class="col-10 col-md-6">
-            <form class="form-inline search-form">
-                <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn" type="submit">Cari</button>
-            </form>
-        </div>
-    </div>
 </section>
 {{-- section carousel end --}}
+
+<div class="row justify-content-center row-search">
+    <div class="col-10 col-md-6">
+        <form class="form-inline search-form">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn" type="submit">Cari</button>
+        </form>
+    </div>
+</div>
 
 {{-- section portal-informasi --}}
 <section class="portal-informasi" data-aos="fade-right" data-aos-delay="500">

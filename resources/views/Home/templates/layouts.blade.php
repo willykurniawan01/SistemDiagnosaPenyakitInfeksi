@@ -166,9 +166,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -177,7 +175,33 @@
         crossorigin="anonymous"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>AOS.init();</script>
-    <script src="js/script.js"></script>
+    @if(Request::url() === route('sidipi-penyakit'))
+    <script>
+        $(document).ready(function(){
+        getData();
+
+
+            function getData(keyword=''){
+
+                $.ajax({
+                    url:"{{route('live_search') }}",
+                    method:'GET',
+                    data:{keyword:keyword},
+                    dataType:'json',
+                    success:function(keyword){
+                        $('#result').html(keyword.table_data);
+                    }
+                })
+            }
+
+            $(document).on('keyup','#live_search',function(){
+              var keyword = $(this).val();
+             getData(keyword);
+            });
+        });
+    </script>
+    @endif
+        
 </body>
 
 </html>
