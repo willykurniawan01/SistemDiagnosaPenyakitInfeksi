@@ -33,9 +33,10 @@ class ArtikelPenyakitController extends Controller
 
             $total_row = $data->count();
             if ($total_row > 0) {
+                $delay = 400;
                 foreach ($data as $row) {
                     $output .= '    
-                    <figure class="figure">
+                    <figure class="figure" data-aos="zoom-out" data-aos-delay="' . $delay . '" >
                         <div class="figure-img">
                             <a href="#">
                                 <img src="Home/assets/img/virus2.png" alt="...">
@@ -44,6 +45,7 @@ class ArtikelPenyakitController extends Controller
                         <figcaption class="figure-caption text-sidipi2 font-weight-bold text-center fs-20 text-uppercase">' . $row->nama_penyakit . '</figcaption>
                     </figure>
                    ';
+                    $delay += 600;
                 }
             } else {
                 $output = '
