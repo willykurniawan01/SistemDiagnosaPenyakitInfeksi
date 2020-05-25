@@ -50,7 +50,7 @@
 {{-- section carousel end --}}
 
 {{-- section portal-informasi --}}
-<section class="portal-informasi">
+<section class="portal-informasi" data-aos="fade-right" data-aos-delay="500">
     <div class="container portal-container">
         <div class="row">
             <h4>Portal Informasi</h4>
@@ -62,8 +62,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
-                        @if(count($portal_informasi)>0) @for($i=0;$i<3;$i++) <div class="card py-4 px-4 my-3"
-                            data-aos="fade-right" data-aos-delay="500">
+                        @if(count($portal_informasi)>0) @for($i=0;$i<3;$i++) <div class="card py-4 px-4 my-3">
                             <figure class="figure">
                                 <div class="figure-img">
                                     <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
@@ -127,7 +126,7 @@
 {{-- section portal-informasi --}}
 
 <!-- section info kseshatan -->
-<section class="info-kesehatan">
+<section class="info-kesehatan" data-aos="fade-left" data-aos-delay="800">
     <div class="container info-kesehatan-container">
         <div class="row">
             <h4>Info Kesehatan</h4>
@@ -153,7 +152,7 @@
                                 <h4 class="judul">
                                     {{$i->judul}}
                                 </h4>
-                                <p class="text-justify" data-aos="fade-left" data-aos-delay="300">
+                                <p class="text-justify">
                                     {{(str_word_count($i->isi))>60 ? substr($i->isi,0,1000):$i->isi}}
                                 </p>
                             </div>
@@ -186,7 +185,7 @@
 <!-- section info kseshatan -->
 
 {{-- Corona Virus section --}}
-<section class="portal-informasi">
+<section class="portal-informasi" data-aos="fade-right" data-aos-delay="800">
     <div class="container portal-container">
         <div class="row">
             <h4>Corona Virus</h4>
@@ -199,7 +198,7 @@
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
                         @if(isset($corona_virus) AND count($corona_virus)>0)
-                        @for($i=0;$i<3;$i++) <div class="card py-4 px-4 my-3" data-aos="fade-left" data-aos-delay="500">
+                        @for($i=0;$i<3;$i++) <div class="card py-4 px-4 my-3">
                             <figure class="figure">
                                 <div class="figure-img">
                                     <img src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
@@ -265,7 +264,7 @@
 {{-- section corona virus --}}
 
 <!-- section Penyakit infeksi -->
-<section class="penyakit-infeksi">
+<section class="penyakit-infeksi" data-aos="fade-left" data-aos-delay="800">
     <div class="container penyakit-container my-2">
         <div class="row">
             <h4>{{$penyakit_infeksi[0]->judul}}</h4>
@@ -289,7 +288,7 @@
 <!-- section Penyakit infeksi -->
 
 <!-- section developer -->
-<section class="developer">
+<section class="developer" data-aos="fade-right" data-aos-delay="800">
     <div class="container developer-container mb-3">
         <div class="row">
             <h4>Developer</h4>

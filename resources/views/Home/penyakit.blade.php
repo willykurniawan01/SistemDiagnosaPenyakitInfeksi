@@ -7,7 +7,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent">
                     <li class="breadcrumb-item"><a href="{{route('sidipi-home')}}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    <li class="breadcrumb-item active" aria-current="page">Penyakit</li>
                 </ol>
             </nav>
         </div>
@@ -16,7 +16,7 @@
             <div class="col-6">
                 <div class="input-group input-group-lg">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
+                        <span class="input-group-text bg-sidipi" id="inputGroup-sizing-lg"><img src="{{url('Home/assets/img/search-icon.png')}}" alt=""></span>
                     </div>
                     <input type="text" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-lg">

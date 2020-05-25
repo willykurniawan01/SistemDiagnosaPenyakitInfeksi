@@ -6,7 +6,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent">
                 <li class="breadcrumb-item"><a href="{{route('sidipi-home')}}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                <li class="breadcrumb-item active" aria-current="page">Artikel</li>
             </ol>
         </nav>
     </div>
