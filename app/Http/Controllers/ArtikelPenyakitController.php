@@ -71,6 +71,7 @@ class ArtikelPenyakitController extends Controller
      */
     public function show($id)
     {
-        //
+        $penyakit=DB::table('penyakit')->where('id_penyakit','=',$id)->get();
+        return view('Home.single-penyakit',['penyakit'=>$penyakit]);
     }
 }

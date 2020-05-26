@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;  
+use Illuminate\Support\Facades\Storage;
 
 class PenyakitController extends Controller
 {
@@ -12,9 +13,15 @@ class PenyakitController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $penyakit = DB::table('penyakit')->get();
+        if ($request->input('cari')) {
+            $penyakit = DB::table('penyakit')
+                ->where('nama_penyakit', 'like', '%' . $request->input('cari') . '%')->paginate(2);
+        } else {
+            $penyakit = DB::table('penyakit')->paginate(2);
+        }
+
         return view('Admin.penyakit', ['penyakit' => $penyakit]);
     }
 
@@ -34,14 +41,51 @@ class PenyakitController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request){
+    //validasi file
+    $request->validate([
+        'img' => 'required|mimes:jpeg,jpg,png',
+    ]);
+    
+
+    //upload file
+    if ($request->hasFile('img')) {
+        //Get filename with the extension
+        $fileNameWithExt = $request->file('img')->getClientOriginalName();
+
+        //Get just filename
+        $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+
+        //get just extension
+        $extension = $request->file('img')->getClientOriginalExtension();
+
+        //Filename to store
+        $fileNameToStore = $fileName . '_' . time() . '.' . $extension;
+
+        //upload file
+        $path = $request->file('img')->storeAs('public/uploads', $fileNameToStore);
+    } else {
+        $fileNameToStore = 'noimg.jpg';
+    }
+
+
+
+
+
     {
         DB::table('penyakit')->insert(
-            ['nama_penyakit' => $request->input('nama_penyakit'), 'kategori' => $request->input('kategori')]
+            [
+                'nama_penyakit' => $request->input('nama_penyakit'), 
+                'kategori' => $request->input('kategori'),
+                'penyakit_desc'=>$request->input('desc'),
+                'img'=>$fileNameToStore
+            ]
         );
 
-        return redirect('Admin/penyakit');
+        return redirect('Admin/penyakit')->with(['success'=>'Data Penyakit Berhasil di Tambahkan!']);
     }
+    
+}
 
     /**
      * Display the specified resource.

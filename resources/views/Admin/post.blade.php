@@ -48,7 +48,7 @@
 
             <div class="row my-3">
                 <div class="col-8">
-                    <form action="{{route('cari')}}" method="POST" class="form-inline">
+                    <form action="{{route('cari-post')}}" method="POST" class="form-inline">
                         @csrf
                         <input type="text" name="cari" id="cari" class="form-control w-50">
                         <button type="submit" class="btn btn-sidipi text-white font-weight-bold">Cari</button>
@@ -82,7 +82,7 @@
                         @endif
                         <td>{{$p->judul}}</td>
                         <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                        <td><img class="img-thumbnail" width="300px" height="300px"
+                        <td><img class="img-thumbnail" width="200px" height="200px"
                                 src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>
                         <td>
                             <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}"
@@ -277,7 +277,6 @@
                                 <label for="exampleFormControlTextarea1">Isi</label>
                                 <textarea name="isi" class="form-control text-editor" id="editor">
                                 </textarea>
-
                             </div>
 
                             <div class="form-group">

@@ -19,9 +19,9 @@ Route::get('/', 'HomepageController@index')->name('sidipi-home');
 Route::get('/artikel', 'HomepageController@article')->name('sidipi-artikel');
 Route::get('/penyakit', 'ArtikelPenyakitController@index')->name('sidipi-penyakit');
 Route::get('/penyakit/live', 'ArtikelPenyakitController@live_search')->name('live_search');
-Route::get('penyakit/{id}', function ($id) {
-    return $id;
-})->name('sidipi-single-penyakit');
+
+Route::get('penyakit/{id}', 'ArtikelPenyakitController@show')->name('sidipi-single-penyakit');
+    
 Route::get('/diagnosa', 'DiagnosaController@index')->name('sidipi-diagnosa');
 Route::get('/diagnosa/hasil/{id}', 'DiagnosaController@show')->name('sidipi-hasil-diagnosa');
 Route::get('/artikel/{id}', 'HomepageController@show')->name('sidipi-single');
@@ -32,8 +32,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('Admin/penyakit', 'PenyakitController@index')->name('penyakit');
     Route::get('Admin/gejala', 'GejalaController@index')->name('gejala');
     Route::get('Admin/post', 'PostController@index')->name('post');
-
-    Route::post('Admin/post', 'PostController@index')->name('cari');
+    Route::post('Admin/post', 'PostController@index')->name('cari-post');
 
     //inputpenyakit
     Route::post('Admin/penyakit/input', 'PenyakitController@store')->name('input-penyakit');
@@ -45,7 +44,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //hapus penyakit
     Route::get('Admin/penyakit/hapus/{id}', 'PenyakitController@destroy')->name('hapus-penyakit');
-
+    //cari penyakit
+    Route::post('Admin/penyakit', 'PenyakitController@index')->name('cari-penyakit');
 
     //inputgejala
     Route::post('Admin/gejala/input', 'GejalaController@store')->name('input-gejala');
