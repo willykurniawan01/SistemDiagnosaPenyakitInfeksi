@@ -1,5 +1,5 @@
 @extends('Home.templates.layouts')
-@section('title','Artikel')
+@section('title','Penyakit')
 @section('content')
 <section class="single-article">
     <div class="container">
@@ -7,7 +7,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent">
                     <li class="breadcrumb-item"><a href="{{route('sidipi-home')}}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{route('sidipi-artikel')}}">Penyakit</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('sidipi-penyakit')}}">Penyakit</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{$penyakit[0]->id_penyakit}}</li>
                 </ol>
             </nav>
