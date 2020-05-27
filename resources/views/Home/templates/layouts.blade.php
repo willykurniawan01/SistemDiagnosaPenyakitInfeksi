@@ -40,7 +40,7 @@
     </nav>
     <nav class="navbar navbar-artikel navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="nav-item nav-link" href="{{route('sidipi-home')}}"> <span class="popular">Popular</span></a>
+            <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'popular'])}}"> <span class="popular">Popular</span></a>
         <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'info kesehatan'])}}">Info Kesehatan</a>
             <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'corona virus'])}}">CoronaVirus</a>
             <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'tips hidup sehat'])}}">Tips Hidup Sehat</a>

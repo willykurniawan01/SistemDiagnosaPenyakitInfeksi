@@ -26,7 +26,6 @@ class HomepageController extends Controller
         $penyakit_infeksi = DB::table('post')->where('kategori', 'like', '%penyakit infeksi%')->paginate(1);
 
 
-
         $post = DB::table('post')
             ->orderBy('id_post', 'DESC')
             ->paginate(3);
@@ -43,10 +42,16 @@ class HomepageController extends Controller
     public function article($category = null)
     {
         if (isset($category)) {
-            $post = DB::table('post')
-                ->where('kategori', 'like', '%' . $category . '%')
-                ->orderBy('id_post', 'DESC')
-                ->paginate(6);
+            if ($category == 'popular') {
+                $post = DB::table('post')
+                    ->where('popular', '=', 1)
+                    ->paginate(6);
+            } else {
+                $post = DB::table('post')
+                    ->where('kategori', 'like', '%' . $category . '%')
+                    ->orderBy('id_post', 'DESC')
+                    ->paginate(6);
+            }
         } else {
             $post = DB::table('post')
                 ->orderBy('id_post', 'DESC')
