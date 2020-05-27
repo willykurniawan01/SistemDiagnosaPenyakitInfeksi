@@ -40,13 +40,22 @@ class HomepageController extends Controller
         ]);
     }
 
-    public function article()
+    public function article($category = null)
     {
-        $post = DB::table('post')
-            ->orderBy('id_post', 'DESC')
-            ->paginate(6);
+        if (isset($category)) {
+            $post = DB::table('post')
+                ->where('kategori', 'like', '%' . $category . '%')
+                ->orderBy('id_post', 'DESC')
+                ->paginate(6);
+        } else {
+            $post = DB::table('post')
+                ->orderBy('id_post', 'DESC')
+                ->paginate(6);
+        }
         return view('Home.artikel', ['post' => $post]);
     }
+
+
 
 
     /**

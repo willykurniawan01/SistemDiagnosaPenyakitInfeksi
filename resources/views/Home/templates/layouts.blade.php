@@ -20,7 +20,7 @@
 
 <body>
     <!-- navbar -->
-    @if(Request::url() === route('sidipi-artikel'))
+    @if(strpos(Request::url(),'artikel'))
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
         <a class="navbar-brand" href="{{route('sidipi-home')}}"> <img src="{{url('Home/assets/img/LOGO.png')}}" alt=""> </a>
@@ -41,9 +41,9 @@
     <nav class="navbar navbar-artikel navbar-expand-lg fixed-top">
         <div class="container">
             <a class="nav-item nav-link" href="{{route('sidipi-home')}}"> <span class="popular">Popular</span></a>
-            <a class="nav-item nav-link" href="{{route('sidipi-artikel')}}">Info Kesehatan</a>
-            <a class="nav-item nav-link" href="{{route('sidipi-penyakit')}}">CoronaVirus</a>
-            <a class="nav-item nav-link" href="{{route('sidipi-diagnosa')}}">Tips Hidup Sehat</a>
+        <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'info kesehatan'])}}">Info Kesehatan</a>
+            <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'corona virus'])}}">CoronaVirus</a>
+            <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'tips'])}}">Tips Hidup Sehat</a>
         </div>
     </nav>
     @else

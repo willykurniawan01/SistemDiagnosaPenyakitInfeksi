@@ -16,7 +16,7 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        //query
+        //searching
         if ($request->input('cari')) {
             $semua = DB::table('post')
                 ->where('judul', 'like', '%' . $request->input('cari') . '%')->paginate(2);
@@ -24,32 +24,43 @@ class PostController extends Controller
             $semua = DB::table('post')->paginate(2);
         }
 
-
+        //query
         $portal_informasi = DB::table('post')->where('kategori', 'like', '%portal informasi%')->get();
         $info_kesehatan = DB::table('post')->where('kategori', 'like', '%info kesehatan%')->get();
         $corona_virus = DB::table('post')->where('kategori', 'like', '%corona virus%')->get();
         $penyakit_infeksi = DB::table('post')->where('kategori', 'like', '%penyakit infeksi%')->get();
+        $popular = DB::table('post')
+            ->where('popular', '=', 1)
+            ->get();
         //query
-
 
         return view('Admin.post', [
             'semua' => $semua,
             'portal_informasi' => $portal_informasi,
             'info_kesehatan' => $info_kesehatan,
             'corona_virus' => $corona_virus,
-            'penyakit_infeksi' => $penyakit_infeksi
+            'penyakit_infeksi' => $penyakit_infeksi,
+            'popular' => $popular
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function deleteFromPopular($id)
     {
-        //
+        DB::table('post')
+            ->where('id_post', '=', decrypt($id))
+            ->update(['popular' => 0]);
+        return redirect(route('post'))->with(['success' => 'Berhasil Menghapus Post dari Populer']);
     }
+
+    public function addToPopular($id)
+    {
+        DB::table('post')
+            ->where('id_post', '=', decrypt($id))
+            ->update(['popular' => 1]);
+        return redirect(route('post'))->with(['success' => 'Berhasil Menambahkan Post ke Populer']);
+    }
+
+
 
     /**
      * Store a newly created resource in storage.

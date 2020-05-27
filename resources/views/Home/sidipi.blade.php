@@ -204,7 +204,7 @@
                                     <img src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
                                         class="figure-img img-fluid rounded" alt="..." />
                                     <a class="d-flex"
-                                        href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"><img
+                                        href="{{route('sidipi-single',['id'=>$corona_virus[$i]->id_post])}}"><img
                                             class="align-self-center m-auto" src="{{
                                             url('Home/assets/img/see-icon.png')
                                         }}" alt="" /></a>
@@ -213,7 +213,7 @@
                                     <h4 class="judul">{{$corona_virus[$i]->judul}}</h4>
                                     <p> {{(str_word_count($corona_virus[$i]->isi))>60 ? substr($corona_virus[$i]->isi,0,20):$corona_virus[$i]->isi}}
                                         ...</p>
-                                    <a href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"
+                                    <a href="{{route('sidipi-single',['id'=>$corona_virus[$i]->id_post])}}"
                                         class="btn btn-sidipi">Selengkapnya</a>
                                 </figcaption>
                             </figure>

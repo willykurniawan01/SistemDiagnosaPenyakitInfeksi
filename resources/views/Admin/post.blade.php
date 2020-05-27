@@ -19,6 +19,10 @@
                 aria-controls="semua" aria-selected="true">Semua</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link text-danger" id="popular-tab" data-toggle="tab" href="#popular"
+                role="tab" aria-controls="popular" aria-selected="false">Populer</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link text-dark" id="portal-informasi-tab" data-toggle="tab" href="#portal-informasi"
                 role="tab" aria-controls="portal-informasi" aria-selected="false">Portal Informasi</a>
         </li>
@@ -34,9 +38,10 @@
             <a class="nav-link text-dark" id="penyakit-infeksi-tab" data-toggle="tab" href="#penyakit-infeksi"
                 role="tab" aria-controls="penyakit-infeksi" aria-selected="false">Penyakit Infeksi</a>
         </li>
+        
         <li class="nav-item">
             <a class="nav-link text-dark" id="tambah-data-tab" data-toggle="tab" href="#tambah-data" role="tab"
-                aria-controls="tambah-data" aria-selected="false">Tambah Data</a>
+                aria-controls="tambah-data" aria-selected="false">Tambah Post</a>
         </li>
     </ul>
 
@@ -89,6 +94,7 @@
                                 class=" btn badge btn-danger">Hapus</a>
                             <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}"
                                 class="btn badge btn-success mr-1">Edit</a>
+                            <a href="{{route('tambah-popular',['id'=>encrypt($p->id_post)])}}" class="badge badge-primary">Tambah ke Populer</a>
                         </td>
                     </tr>
                     @endforeach
@@ -249,6 +255,40 @@
         </div>
         <!-- penyakit infeksi -->
 
+        <!-- popular -->
+        <div class="tab-pane fade" id="popular" role="tabpanel" aria-labelledby="popular-tab">
+
+
+            <!-- table -->
+            <table class="table mt-3">
+                <thead class="bg-sidipi text-light">
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Waktu Di buat</th>
+                        <th scope="col">image</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-dark font-weight-bold">
+                    @foreach ($popular as $p)
+                    <tr>
+                        <th scope="row">{{$loop->iteration}}</th>
+                        <td>{{$p->judul}}</td>
+                        <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
+                        <td><img class="img-thumbnail" width="300px" height="300px"
+                                src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>
+                        <td>
+                            <a href="{{route('hapus-popular',['id'=>encrypt($p->id_post)])}}"
+                                class=" btn badge btn-danger">Hapus dari populer</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        <!-- popular -->
+
 
         <!-- input data -->
         <div class="tab-pane fade" id="tambah-data" role="tabpanel" aria-labelledby="tambah-data-tab">
@@ -295,6 +335,8 @@
             </div>
         </div>
         <!-- input data -->
+
+       
 
 
     </div>

@@ -17,15 +17,19 @@ Auth::routes();
 
 Route::get('/', 'HomepageController@index')->name('sidipi-home');
 Route::get('/artikel', 'HomepageController@article')->name('sidipi-artikel');
+
+Route::get('artikel/{category}', 'HomepageController@article')->name('sidipi-category');
+
 Route::get('/penyakit', 'ArtikelPenyakitController@index')->name('sidipi-penyakit');
 Route::get('/penyakit/live', 'ArtikelPenyakitController@live_search')->name('live_search');
 
 Route::get('penyakit/{id}', 'ArtikelPenyakitController@show')->name('sidipi-single-penyakit');
-    
+
 Route::get('/diagnosa', 'DiagnosaController@index')->name('sidipi-diagnosa');
 Route::get('/diagnosa/hasil/{id}', 'DiagnosaController@show')->name('sidipi-hasil-diagnosa');
-Route::get('/artikel/{id}', 'HomepageController@show')->name('sidipi-single');
+Route::get('/artikel/detail/{id}', 'HomepageController@show')->name('sidipi-single');
 Route::get('/developer/{id}', 'DeveloperController@show')->name('sidipi-developer');
+
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('Admin/home', 'HomeController@index')->name('home');
@@ -76,4 +80,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Hapus Post
     Route::get('Admin/post/hapus/{id}', 'PostController@destroy')->name('hapus-post');
+
+    //hapus dari popular
+    Route::get('Admin/post/hapus-popular/{id}', 'PostController@deleteFromPopular')->name('hapus-popular');
+
+    //tambahkan ke popular
+    Route::get('Admin/post/tambah-popular/{id}', 'PostController@addToPopular')->name('tambah-popular');
 });
