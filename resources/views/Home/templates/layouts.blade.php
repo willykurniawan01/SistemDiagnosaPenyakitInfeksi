@@ -43,7 +43,7 @@
             <a class="nav-item nav-link" href="{{route('sidipi-home')}}"> <span class="popular">Popular</span></a>
         <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'info kesehatan'])}}">Info Kesehatan</a>
             <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'corona virus'])}}">CoronaVirus</a>
-            <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'tips'])}}">Tips Hidup Sehat</a>
+            <a class="nav-item nav-link" href="{{route('sidipi-category',['category'=>'tips hidup sehat'])}}">Tips Hidup Sehat</a>
         </div>
     </nav>
     @else

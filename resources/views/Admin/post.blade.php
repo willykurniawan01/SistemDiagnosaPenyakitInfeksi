@@ -19,7 +19,7 @@
                 aria-controls="semua" aria-selected="true">Semua</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-danger" id="popular-tab" data-toggle="tab" href="#popular"
+            <a class="nav-link text-danger font-weight-bold" id="popular-tab" data-toggle="tab" href="#popular"
                 role="tab" aria-controls="popular" aria-selected="false">Populer</a>
         </li>
         <li class="nav-item">
@@ -134,6 +134,7 @@
                                 class=" btn badge btn-danger">Hapus</a>
                             <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}"
                                 class="btn badge btn-success mr-1">Edit</a>
+                                <a href="{{route('tambah-popular',['id'=>encrypt($p->id_post)])}}" class="badge badge-primary">Tambah ke Populer</a>
                         </td>
                     </tr>
                     @endforeach
@@ -171,6 +172,7 @@
                                 class=" btn badge btn-danger">Hapus</a>
                             <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}"
                                 class="btn badge btn-success mr-1">Edit</a>
+                                <a href="{{route('tambah-popular',['id'=>encrypt($p->id_post)])}}" class="badge badge-primary">Tambah ke Populer</a>
                         </td>
                     </tr>
                     @endforeach
@@ -209,6 +211,7 @@
                                 class=" btn badge btn-danger">Hapus</a>
                             <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}"
                                 class="btn badge btn-success mr-1">Edit</a>
+                                <a href="{{route('tambah-popular',['id'=>encrypt($p->id_post)])}}" class="badge badge-primary">Tambah ke Populer</a>
                         </td>
                     </tr>
                     @endforeach
@@ -247,6 +250,7 @@
                                 class=" btn badge btn-danger">Hapus</a>
                             <a href="{{route('edit-post',['id'=>encrypt($p->id_post)])}}"
                                 class="btn badge btn-success mr-1">Edit</a>
+                                <a href="{{route('tambah-popular',['id'=>encrypt($p->id_post)])}}" class="badge badge-primary">Tambah ke Populer</a>
                         </td>
                     </tr>
                     @endforeach
