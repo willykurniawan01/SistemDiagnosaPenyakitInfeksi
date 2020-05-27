@@ -20,11 +20,11 @@
             <div class="row big-image">
                 <figure class="figure">
                     <div class="figure-img">
-                    <a href="{{route('sidipi-single',['id'=>encrypt($p->id_post )])}}">
+                    <a href="{{route('sidipi-single',['id'=>$p->id_post])}}">
                             <img src="{{url('storage/uploads'.'/'.
                         $p->img)}}" class="" alt="...">
                         </a>
-                        <a href="{{route('sidipi-single',['id'=>encrypt($p->id_post )])}}" class="judul">{{$p->judul}}</a>
+                        <a href="{{route('sidipi-single',['id'=>$p->id_post])}}" class="judul">{{$p->judul}}</a>
                         <h4 class="date">On {{date('l,d F Y h:i',strtotime($p->time))}}</h4>
                     </div>
                 </figure>
@@ -33,10 +33,10 @@
             <div class="row medium-image">
                 <figure class="figure">
                     <div class="figure-img">
-                        <a href="{{route('sidipi-single',['id'=>encrypt($p->id_post )])}}">
+                        <a href="{{route('sidipi-single',['id'=>$p->id_post ])}}">
                         <img src="{{url('storage/uploads'.'/'.$p->img)}}" class="" alt="...">
                         </a>
-                        <a href="{{route('sidipi-single',['id'=>encrypt($p->id_post )])}}" class="judul">{{$p->judul}}</a>
+                        <a href="{{route('sidipi-single',['id'=>$p->id_post ])}}" class="judul">{{$p->judul}}</a>
                         <h4 class="date">On {{date('l,d F Y h:i',strtotime($p->time))}}</h4>
                     </div>
                 </figure>

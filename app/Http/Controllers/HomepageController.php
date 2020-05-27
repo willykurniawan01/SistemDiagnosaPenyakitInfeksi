@@ -48,26 +48,6 @@ class HomepageController extends Controller
         return view('Home.artikel', ['post' => $post]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -77,7 +57,7 @@ class HomepageController extends Controller
      */
     public function show($id)
     {
-        $post = DB::table('post')->where('id_post', '=', decrypt($id))->get();
+        $post = DB::table('post')->where('id_post', '=', $id)->get();
         return view('Home.single-artikel', ['post' => $post]);
     }
 }

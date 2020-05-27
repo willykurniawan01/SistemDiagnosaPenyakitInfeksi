@@ -15,7 +15,7 @@
                                 <h1 class="judul text-sidipi font-weight-bolder">“{{$p->judul}}”</h1>
                                 <p class="text-white text-justify">
                                     {{(str_word_count($p->isi))>60 ? substr($p->isi,0,200).' ...':$p->isi}}</p>
-                                <a href="{{route('sidipi-single',['id'=>encrypt($p->id_post)])}}"
+                                <a href="{{route('sidipi-single',['id'=>$p->id_post])}}"
                                     class="btn btn-sidipi">Selengkapnya</a>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                                     <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
                                         class="figure-img img-fluid" alt="..." />
                                     <a class="d-flex"
-                                        href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"><img
+                                        href="{{route('sidipi-single',['id'=>$portal_informasi[$i]->id_post])}}"><img
                                             class="align-self-center m-auto" src="{{
                                             url('Home/assets/img/see-icon.png')
                                         }}" alt="" /></a>
@@ -77,7 +77,7 @@
                                     <h4 class="judul">{{$portal_informasi[$i]->judul}}</h4>
                                     <p> {{(str_word_count($portal_informasi[$i]->isi))>60 ? substr($portal_informasi[$i]->isi,0,20):$portal_informasi[$i]->isi}}
                                         ...</p>
-                                    <a href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"
+                                    <a href="{{route('sidipi-single',['id'=>$portal_informasi[$i]->id_post])}}"
                                         class="btn btn-sidipi">Selengkapnya</a>
                                 </figcaption>
                             </figure>
@@ -95,7 +95,7 @@
                                 <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
                                     class="figure-img img-fluid" alt="..." />
                                 <a class="d-flex"
-                                    href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"><img
+                                    href="{{route('sidipi-single',['id'=>$portal_informasi[$i]->id_post])}}"><img
                                         class="align-self-center m-auto" src="{{
                                             url('Home/assets/img/see-icon.png')
                                         }}" alt="" /></a>
@@ -104,7 +104,7 @@
                                 <h4 class="judul">{{$portal_informasi[$i]->judul}}</h4>
                                 <p> {{(str_word_count($portal_informasi[$i]->isi))>60 ? substr($portal_informasi[$i]->isi,0,20):$portal_informasi[$i]->isi}}
                                     ...</p>
-                                <a href="{{route('sidipi-single',['id'=>encrypt($portal_informasi[$i]->id_post)])}}"
+                                <a href="{{route('sidipi-single',['id'=>$portal_informasi[$i]->id_post])}}"
                                     class="btn btn-sidipi">Selengkapnya</a>
                             </figcaption>
                         </figure>
@@ -159,7 +159,7 @@
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-2">
-                                <a href="{{route('sidipi-single',['id'=>encrypt($i->id_post)])}}"
+                                <a href="{{route('sidipi-single',['id'=>$i->id_post])}}"
                                     class="btn btn-sidipi my-3">
                                     Selengkapnya
                                 </a>
