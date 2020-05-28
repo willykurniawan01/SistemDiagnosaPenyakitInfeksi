@@ -2,14 +2,14 @@
 @section('title','Artikel')
 @section('content')
 <div class="container">
-    <div class="row breadcrumb-row">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-transparent">
-                <li class="breadcrumb-item"><a href="{{route('sidipi-home')}}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Artikel</li>
-            </ol>
-        </nav>
-    </div>
+<div class="row breadcrumb-row">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent">
+            <li class="breadcrumb-item"><a href="{{route('sidipi-home')}}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Artikel</li>
+        </ol>
+    </nav>
+</div>
 
 
     <div class="row row-main justify-content-between">
@@ -70,20 +70,20 @@
                         <div class="col-lg-6">
                             <ul class="list-unstyled mb-0">
                                 <li>
-                                    <a href="#">Portal Informasi</a>
+                                <a href="{{route('sidipi-category',['category'=>'portal informasi'])}}">Portal Informasi</a>
                                 </li>
                                 <li>
-                                    <a href="#">Info Kesehatan</a>
+                                    <a href="{{route('sidipi-category',['category'=>'info kesehatan'])}}">Info Kesehatan</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <ul class="list-unstyled mb-0">
                                 <li>
-                                    <a href="#">Corona Virus</a>
+                                    <a href="{{route('sidipi-category',['category'=>'corona virus'])}}">Corona Virus</a>
                                 </li>
                                 <li>
-                                    <a href="#">Tips Hidup Sehat</a>
+                                    <a href="{{route('sidipi-category',['category'=>'tips hidup sehat'])}}">Tips Hidup Sehat</a>
                                 </li>
                             </ul>
                         </div>

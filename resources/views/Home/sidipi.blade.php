@@ -62,7 +62,16 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
-                        @if(count($portal_informasi)>0) @for($i=0;$i<3;$i++) <div class="card py-4 px-4 my-3">
+                        @if(isset($portal_informasi) AND count($portal_informasi)>0) 
+                        <?php $limit=3; ?>
+                        @if(count($portal_informasi)==2)
+                        <?php $limit=2; ?>
+                        @endif
+                        @if(count($portal_informasi)==1)
+                        <?php $limit=1; ?>
+                        @endif
+                        @for($i=0;$i<$limit;$i++) 
+                        <div class="card py-4 px-4 my-3">
                             <figure class="figure">
                                 <div class="figure-img">
                                     <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
@@ -88,7 +97,7 @@
 
             <div class="carousel-item" data-interval="10000">
                 <div class="container d-flex justify-content-md-around">
-                    @if(count($portal_informasi)>3) @for($i=3;$i<6;$i++)<div class="card py-4 px-4 my-3"
+                    @if(isset($portal_informasi) AND count($portal_informasi)>3) @for($i=3;$i<count($portal_informasi);$i++)<div class="card py-4 px-4 my-3"
                         data-aos="fade-right" data-aos-delay="500">
                         <figure class="figure">
                             <div class="figure-img">
@@ -198,7 +207,14 @@
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
                         @if(isset($corona_virus) AND count($corona_virus)>0)
-                        @for($i=0;$i<3;$i++) <div class="card py-4 px-4 my-3">
+                        <?php $limit=3; ?>
+                        @if(count($corona_virus)==2)
+                        <?php $limit=2; ?>
+                        @endif
+                        @if(count($corona_virus)==1)
+                        <?php $limit=1; ?>  
+                        @endif
+                        @for($i=0;$i<$limit;$i++) <div class="card py-4 px-4 my-3">
                             <figure class="figure">
                                 <div class="figure-img">
                                     <img src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
@@ -226,7 +242,7 @@
             <div class="carousel-item" data-interval="5000">
                 <div class="container d-flex justify-content-md-around">
                     @if(isset($corona_virus) AND count($corona_virus)>3)
-                    @for($i=3;$i<6;$i++) <div class="card py-4 px-4 my-3" data-aos="fade-left" data-aos-delay="500">
+                    @for($i=3;$i<count($corona_virus);$i++) <div class="card py-4 px-4 my-3" data-aos="fade-left" data-aos-delay="500">
                         <figure class="figure">
                             <div class="figure-img">
                                 <img src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"

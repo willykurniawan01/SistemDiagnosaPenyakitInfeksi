@@ -3,6 +3,15 @@
 @section('content')
 <section class="diagnosa">
     <div class="container">
+        <div class="row breadcrumb-row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent">
+                    <li class="breadcrumb-item"><a href="{{route('sidipi-home')}}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Diagnosa</li>
+                </ol>
+            </nav>
+        </div>
+
         <form action="" method="post">
             <table class="table">
                 <thead class="bg-sidipi text-sidipi">
