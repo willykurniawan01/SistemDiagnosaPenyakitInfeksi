@@ -319,7 +319,7 @@
 
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Isi</label>
-                                <textarea name="isi" class="form-control text-editor" id="editor">
+                                <textarea name="isi" class="form-control " id="editor1">
                                 </textarea>
                             </div>
 

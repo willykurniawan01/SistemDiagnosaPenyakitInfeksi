@@ -39,7 +39,7 @@
 
                 <div class="row row-isi">
                     <div class="col-12">
-                        <p class="text-justify">{{$post[0]->isi}}</p>
+                        <div class="text-justify">{!!$post[0]->isi!!}</div>
                     </div>
                 </div>
             </div>

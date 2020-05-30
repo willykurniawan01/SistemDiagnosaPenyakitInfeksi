@@ -13,10 +13,12 @@
                         <div class="col-12 justify-content-center mt-5 mt-md-0 col-md-6 d-flex">
                             <div class="align-self-center">
                                 <h1 class="judul text-sidipi font-weight-bolder">“{{$p->judul}}”</h1>
-                                <p class="text-white text-justify">
-                                    {{(str_word_count($p->isi))>60 ? substr($p->isi,0,200).' ...':$p->isi}}</p>
-                                <a href="{{route('sidipi-single',['id'=>$p->id_post])}}"
-                                    class="btn btn-sidipi">Selengkapnya</a>
+                                <div class="text-white text-justify">
+                                    {!!(str_word_count($p->isi))>60 ? substr($p->isi,0,200).' ...':$p->isi!!}</div>
+                                <div class="pt-2">
+                                    <a href="{{route('sidipi-single',['id'=>$p->id_post])}}"
+                                        class="btn btn-sidipi">Selengkapnya</a>
+                                </div>
                             </div>
                         </div>
 
@@ -62,7 +64,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="10000">
                     <div class="container d-flex justify-content-md-around">
-                        @if(isset($portal_informasi) AND count($portal_informasi)>0) 
+                        @if(isset($portal_informasi) AND count($portal_informasi)>0)
                         <?php $limit=3; ?>
                         @if(count($portal_informasi)==2)
                         <?php $limit=2; ?>
@@ -70,8 +72,7 @@
                         @if(count($portal_informasi)==1)
                         <?php $limit=1; ?>
                         @endif
-                        @for($i=0;$i<$limit;$i++) 
-                        <div class="card py-4 px-4 my-3">
+                        @for($i=0;$i<$limit;$i++) <div class="card py-4 px-4 my-3">
                             <figure class="figure">
                                 <div class="figure-img">
                                     <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
@@ -84,8 +85,9 @@
                                 </div>
                                 <figcaption class="figure-caption text-sidipi2 fs-20">
                                     <h4 class="judul">{{$portal_informasi[$i]->judul}}</h4>
-                                    <p> {{(str_word_count($portal_informasi[$i]->isi))>60 ? substr($portal_informasi[$i]->isi,0,20):$portal_informasi[$i]->isi}}
-                                        ...</p>
+                                    <div> {!!(str_word_count($portal_informasi[$i]->isi))>60 ?
+                                        substr($portal_informasi[$i]->isi,0,20):$portal_informasi[$i]->isi!!}
+                                        ...</div>
                                     <a href="{{route('sidipi-single',['id'=>$portal_informasi[$i]->id_post])}}"
                                         class="btn btn-sidipi">Selengkapnya</a>
                                 </figcaption>
@@ -97,8 +99,9 @@
 
             <div class="carousel-item" data-interval="10000">
                 <div class="container d-flex justify-content-md-around">
-                    @if(isset($portal_informasi) AND count($portal_informasi)>3) @for($i=3;$i<count($portal_informasi);$i++)<div class="card py-4 px-4 my-3"
-                        data-aos="fade-right" data-aos-delay="500">
+                    @if(isset($portal_informasi) AND count($portal_informasi)>3) @for($i=3;$i
+                    <count($portal_informasi);$i++)<div class="card py-4 px-4 my-3" data-aos="fade-right"
+                        data-aos-delay="500">
                         <figure class="figure">
                             <div class="figure-img">
                                 <img src="{{url('storage/uploads').'/'.$portal_informasi[$i]->img}}"
@@ -161,15 +164,14 @@
                                 <h4 class="judul">
                                     {{$i->judul}}
                                 </h4>
-                                <p class="text-justify">
-                                    {{(str_word_count($i->isi))>60 ? substr($i->isi,0,1000):$i->isi}}
-                                </p>
+                                <div class="text-justify">
+                                    {!!(str_word_count($i->isi))>60 ? substr($i->isi,0,1000):$i->isi!!}
+                                </div>
                             </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-2">
-                                <a href="{{route('sidipi-single',['id'=>$i->id_post])}}"
-                                    class="btn btn-sidipi my-3">
+                                <a href="{{route('sidipi-single',['id'=>$i->id_post])}}" class="btn btn-sidipi my-3">
                                     Selengkapnya
                                 </a>
                             </div>
@@ -212,7 +214,7 @@
                         <?php $limit=2; ?>
                         @endif
                         @if(count($corona_virus)==1)
-                        <?php $limit=1; ?>  
+                        <?php $limit=1; ?>
                         @endif
                         @for($i=0;$i<$limit;$i++) <div class="card py-4 px-4 my-3">
                             <figure class="figure">
@@ -227,8 +229,9 @@
                                 </div>
                                 <figcaption class="figure-caption text-sidipi2 fs-20">
                                     <h4 class="judul">{{$corona_virus[$i]->judul}}</h4>
-                                    <p> {{(str_word_count($corona_virus[$i]->isi))>60 ? substr($corona_virus[$i]->isi,0,20):$corona_virus[$i]->isi}}
-                                        ...</p>
+                                    <div> {!!(str_word_count($corona_virus[$i]->isi))>60 ?
+                                        substr($corona_virus[$i]->isi,0,20):$corona_virus[$i]->isi!!}
+                                        ...</div>
                                     <a href="{{route('sidipi-single',['id'=>$corona_virus[$i]->id_post])}}"
                                         class="btn btn-sidipi">Selengkapnya</a>
                                 </figcaption>
@@ -242,7 +245,8 @@
             <div class="carousel-item" data-interval="5000">
                 <div class="container d-flex justify-content-md-around">
                     @if(isset($corona_virus) AND count($corona_virus)>3)
-                    @for($i=3;$i<count($corona_virus);$i++) <div class="card py-4 px-4 my-3" data-aos="fade-left" data-aos-delay="500">
+                    @for($i=3;$i<count($corona_virus);$i++) <div class="card py-4 px-4 my-3" data-aos="fade-left"
+                        data-aos-delay="500">
                         <figure class="figure">
                             <div class="figure-img">
                                 <img src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
@@ -255,8 +259,9 @@
                             </div>
                             <figcaption class="figure-caption text-sidipi2 fs-20">
                                 <h4 class="judul">{{$corona_virus[$i]->judul}}</h4>
-                                <p> {{(str_word_count($corona_virus[$i]->isi))>60 ? substr($corona_virus[$i]->isi,0,20):$corona_virus[$i]->isi}}
-                                    ...</p>
+                                <div> {!!(str_word_count($corona_virus[$i]->isi))>60 ?
+                                    substr($corona_virus[$i]->isi,0,20):$corona_virus[$i]->isi!!}
+                                    ...</div>
                                 <a href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"
                                     class="btn btn-sidipi">Selengkapnya</a>
                             </figcaption>

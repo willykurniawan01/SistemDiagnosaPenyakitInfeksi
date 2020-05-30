@@ -35,7 +35,7 @@
 
                 <div class="row row-isi">
                     <div class="col-12">
-                        <p class="text-justify">{{$penyakit[0]->penyakit_desc}}</p>
+                        <div class="text-justify">{!!$penyakit[0]->penyakit_desc!!}</div>
                     </div>
                 </div>
             </div>

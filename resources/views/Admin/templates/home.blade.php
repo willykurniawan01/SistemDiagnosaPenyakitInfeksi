@@ -18,8 +18,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{url('Admin/assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
-    <link href="{{url('Admin/assets/css/style.css')}}" rel="stylesheet">
-    <script src="https://cdn.ckeditor.com/ckeditor5/19.0.0/decoupled-document/ckeditor.js"></script>
+    <link href="{{url('Admin/assets/css/style.css')}}" rel="stylesheet">  
 </head>
 
 <body id="page-top">
@@ -161,18 +160,10 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{url('Admin/assets/js/sb-admin-2.min.js')}}"></script>
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     <script>
-        DecoupledEditor
-            .create(document.querySelector('#editor'))
-            .then(editor => {
-                const toolbarContainer = document.querySelector('#toolbar-container');
-    
-                toolbarContainer.appendChild(editor.ui.view.toolbar.element);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
+        CKEDITOR.replace( 'editor1' );
+</script>
 </body>
 
 </html>
