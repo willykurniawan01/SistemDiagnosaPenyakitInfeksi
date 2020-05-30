@@ -1,10 +1,10 @@
 @extends('Admin.templates.home')
-@section('title','Halaman Edit Post')
+@section('title','Edit Post')
     
 @section('content')
 <div class="container-fluid">
 @foreach ($post as $p)
-<form method="post" enctype="multipart/form-data" action="{{route('update-post',['id'=>encrypt($p->id_post)])}}">
+<form method="post" class="my-5" enctype="multipart/form-data" action="{{route('update-post',['id'=>encrypt($p->id_post)])}}">
     @csrf
         <div class="form-group">
             <label for="exampleFormControlInput1">Judul Postingan</label>
@@ -21,8 +21,8 @@
         </div>
 
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Isi</label>
-        <textarea name="isi" class="form-control" id="exampleFormControlTextarea1">{{$p->isi}}</textarea>
+            <label for="editor1">Isi</label>
+        <textarea name="isi" class="form-control" id="editor1">{{$p->isi}}</textarea>
         </div>
 
         <div class="form-group">
@@ -33,10 +33,7 @@
                 <div class="invalid-feedback">Example invalid custom file feedback</div>
             </div>  
         </div>
-
-        <input name="id_post" type="hidden" value="">
-        <button type="submit" class="btn btn-sidipi">Update</button>
-
+        <button type="submit" class="text-white font-weight-bold btn btn-sidipi">Update</button>
     </form>
     @endforeach    
 </div>

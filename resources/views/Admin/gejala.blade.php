@@ -48,7 +48,7 @@
                                 <th scope="row">{{$loop->iteration}}</th>
                                 <td>{{$g->gejala}}</td>
                                 <td>
-                                    <a href="#" class="btn badge badge-success mr-1">Edit</a>
+                                <a href="{{route('edit-gejala',encrypt($g->id_gejala))}}" class="btn badge badge-success mr-1">Edit</a>
                                     <a href="{{route('hapus-gejala',['id'=>encrypt($g->id_gejala)])}}"
                                         class="badge badge-danger">Hapus</a>
                                 </td>
@@ -110,9 +110,13 @@
                         <form method="post" action="{{route('input-gejala')}}">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Gejala</label>
-                                <input name="gejala" type="text" class="form-control" id="exampleFormControlInput1"
+                                <label for="gejala">Gejala</label>
+                                <input name="gejala" type="text" class="form-control" id="gejala"
                                     placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="pertanyaan">Pertanyaan</label>
+                                <textarea class="form-control" name="pertanyaan" id="pertanyaan"></textarea>
                             </div>
 
                     </div>
@@ -121,7 +125,7 @@
                             data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-sidipi text-white font-weight-bold">Submit</button>
                     </div>
-                    </form>
+                    </>
                 </div>
             </div>
         </div>

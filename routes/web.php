@@ -42,11 +42,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('Admin/penyakit/input', 'PenyakitController@store')->name('input-penyakit');
 
     //edit penyakit
-    Route::get('Admin/penyakit/{id}', function ($id) {
-        return $id;
-    })->name('edit-penyakit');
+    Route::get('Admin/penyakit/edit/{id}', 'PenyakitController@edit')->name('edit-penyakit');
 
-    //hapus penyakit
+    //update penyakit
+    Route::post('Admin/penyakit/update/{id}', 'PenyakitController@update')->name('update-penyakit');
+
+    //hapus penyakit]
     Route::get('Admin/penyakit/hapus/{id}', 'PenyakitController@destroy')->name('hapus-penyakit');
     //cari penyakit
     Route::post('Admin/penyakit', 'PenyakitController@index')->name('cari-penyakit');
@@ -58,9 +59,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('Admin/gejala/hapus/{id}', 'GejalaController@destroy')->name('hapus-gejala');
 
     //edit gejala
-    Route::get('Admin/gejala/{id}', function ($id) {
-        return $id;
-    })->name('edit-gejala');
+    Route::get('Admin/gejala/edit/{id}', 'GejalaController@edit')->name('edit-gejala');
+
+    //update gejala
+    Route::post('Admin/gejala/update/{id}', 'GejalaController@update')->name('update-gejala');
 
     //Tambah Relasi Gejala
     Route::post('Admin/gejala/relasi/add', 'GejalaController@addRelation')->name('tambah-relasi');
