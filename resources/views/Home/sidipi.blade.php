@@ -299,9 +299,9 @@
             </div>
 
             <div class="col-9 d-flex">
-                <p class="text-justify align-self-center">
-                    {{$penyakit_infeksi[0]->isi}}
-                </p>
+                <div class="text-justify align-self-center">
+                    {!!$penyakit_infeksi[0]->isi!!}
+                </div>
             </div>
         </div>
     </div>
