@@ -14,7 +14,7 @@
             </div>
 
             <div class="row hasil-diagnosa">
-                <h4>Anda diperkirakan menderita penyakit Flu</h4>
+                <h4>Beberapa Kemungkinan penyakit yang anda Derita :</h4>
             </div>
 
             <div class="row saran justify-content-center">

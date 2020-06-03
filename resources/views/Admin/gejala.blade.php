@@ -116,7 +116,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="pertanyaan">Pertanyaan</label>
-                                <textarea class="form-control" name="pertanyaan" id="pertanyaan"></textarea>
+                                <textarea class="form-control" name="pertanyaan" id="editor1"></textarea>
                             </div>
 
                     </div>

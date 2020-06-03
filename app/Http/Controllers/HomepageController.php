@@ -16,7 +16,7 @@ class HomepageController extends Controller
     {
         $portal_informasi = DB::table('post')->where('kategori', 'like', '%portal informasi%')
             ->orderBy('id_post', 'DESC')
-            ->get();
+            ->paginate(6);
         $info_kesehatan = DB::table('post')->where('kategori', 'like', '%info kesehatan%')
             ->orderBy('id_post', 'DESC')
             ->paginate(3);

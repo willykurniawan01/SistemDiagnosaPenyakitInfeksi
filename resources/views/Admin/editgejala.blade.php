@@ -9,7 +9,7 @@
         </div>
         <div class="form-group">
             <label for="pertanyaan">Pertanyaan</label>
-            <textarea class="form-control" name="pertanyaan" id="pertanyaan">{{$gejala[0]->pertanyaan}}</textarea>
+            <textarea class="form-control" name="pertanyaan" id="editor1">{{$gejala[0]->pertanyaan}}</textarea>
         </div>
         <button type="submit" class="text-white font-weight-bold btn btn-sidipi">Simpan</button>
     </form>

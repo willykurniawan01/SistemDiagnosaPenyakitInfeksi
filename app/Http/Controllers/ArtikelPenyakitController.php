@@ -39,7 +39,7 @@ class ArtikelPenyakitController extends Controller
                     <figure class="figure" data-aos="zoom-out" data-aos-delay="' . $delay . '"  data-aos-easing="ease-in-out">
                         <div class="figure-img">
                             <a href="' . route('sidipi-single-penyakit', ['id' => $row->id_penyakit]) . '">
-                                <img src="Home/assets/img/virus2.png" alt="...">
+                                <img src="' . url("/storage/uploads") . "/" . $row->img . '" alt="...">
                             </a>
                         </div>
                         <figcaption class="figure-caption text-sidipi2 font-weight-bold text-center fs-20 text-uppercase">' . $row->nama_penyakit . '</figcaption>
@@ -71,7 +71,7 @@ class ArtikelPenyakitController extends Controller
      */
     public function show($id)
     {
-        $penyakit=DB::table('penyakit')->where('id_penyakit','=',$id)->get();
-        return view('Home.single-penyakit',['penyakit'=>$penyakit]);
+        $penyakit = DB::table('penyakit')->where('id_penyakit', '=', $id)->get();
+        return view('Home.single-penyakit', ['penyakit' => $penyakit]);
     }
 }

@@ -48,7 +48,7 @@
                 <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$p->nama_penyakit}}</td>
                     <td>{{$p->kategori}}</td>
-                    <td><img class="img-thumbnail" width="200px" height="200px"
+                    <td><img class="img-thumbnail" style="width: 100px; height:100px;"
                                 src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>                   
                     <td>
                     <a href="{{route('edit-penyakit',['id'=>encrypt($p->id_penyakit)])}}" class="btn badge btn-success mr-1">Edit</a>
@@ -89,7 +89,7 @@
                         </div>
                          <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Deskripsi Penyakit</label>
-                                <textarea name="desc" class="form-control" id="editor">
+                                <textarea id="editor1" name="desc" class="form-control" id="editor">
                                 </textarea>
                         </div>
                         <div class="form-group">
