@@ -87,7 +87,7 @@
                         @endif
                         <td>{{$p->judul}}</td>
                         <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                        <td><img class="img-thumbnail" width="200px" height="200px"
+                        <td><img class="img-thumbnail" style="width: 100px; height:100px;"
                                 src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>
                         <td>
                             <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}"
@@ -127,7 +127,7 @@
                         <th scope="row">{{$loop->iteration}}</th>
                         <td>{{$p->judul}}</td>
                         <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                        <td><img class="img-thumbnail" width="300px" height="300px"
+                        <td><img class="img-thumbnail" style="width: 100px; height:100px;"
                                 src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>
                         <td>
                             <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}"
@@ -165,7 +165,7 @@
                         <th scope="row">{{$loop->iteration}}</th>
                         <td>{{$p->judul}}</td>
                         <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                        <td><img class="img-thumbnail" width="300px" height="300px"
+                        <td><img class="img-thumbnail" style="width: 100px; height:100px;"
                                 src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>
                         <td>
                             <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}"
@@ -204,7 +204,7 @@
                         <th scope="row">{{$loop->iteration}}</th>
                         <td>{{$p->judul}}</td>
                         <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                        <td><img class="img-thumbnail" width="300px" height="300px"
+                        <td><img class="img-thumbnail" style="width: 100px; height:100px;"
                                 src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>
                         <td>
                             <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}"
@@ -243,7 +243,7 @@
                         <th scope="row">{{$loop->iteration}}</th>
                         <td>{{$p->judul}}</td>
                         <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                        <td><img class="img-thumbnail" width="300px" height="300px"
+                        <td><img class="img-thumbnail" style="width: 100px; height:100px;"
                                 src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>
                         <td>
                             <a href="{{route('hapus-post',['id'=>encrypt($p->id_post)])}}"
@@ -280,7 +280,7 @@
                         <th scope="row">{{$loop->iteration}}</th>
                         <td>{{$p->judul}}</td>
                         <td>{{date('l,d F Y h:i',strtotime($p->time))}}</td>
-                        <td><img class="img-thumbnail" width="300px" height="300px"
+                        <td><img class="img-thumbnail" style="width: 100px; height:100px;"
                                 src="{{url('storage/uploads').'/'.$p->img}}" alt=""></td>
                         <td>
                             <a href="{{route('hapus-popular',['id'=>encrypt($p->id_post)])}}"

@@ -19,9 +19,9 @@ class PostController extends Controller
         //searching
         if ($request->input('cari')) {
             $semua = DB::table('post')
-                ->where('judul', 'like', '%' . $request->input('cari') . '%')->paginate(2);
+                ->where('judul', 'like', '%' . $request->input('cari') . '%')->paginate(4);
         } else {
-            $semua = DB::table('post')->paginate(2);
+            $semua = DB::table('post')->paginate(4);
         }
 
         //query

@@ -36,7 +36,7 @@ class GejalaController extends Controller
     {
         DB::table('penyakit_has_gejala')->insert(
             [
-                'id_gejala' => $requests->input('gejala'),
+                'id_gejala' => $requests->input('gejala-relasi'),
                 'id_penyakit' => $requests->input('penyakit')
             ]
         );

@@ -17,9 +17,9 @@ class PenyakitController extends Controller
     {
         if ($request->input('cari')) {
             $penyakit = DB::table('penyakit')
-                ->where('nama_penyakit', 'like', '%' . $request->input('cari') . '%')->paginate(2);
+                ->where('nama_penyakit', 'like', '%' . $request->input('cari') . '%')->paginate(4);
         } else {
-            $penyakit = DB::table('penyakit')->paginate(2);
+            $penyakit = DB::table('penyakit')->paginate(4);
         }
 
         return view('Admin.penyakit', ['penyakit' => $penyakit]);

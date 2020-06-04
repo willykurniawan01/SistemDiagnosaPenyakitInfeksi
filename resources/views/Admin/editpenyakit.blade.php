@@ -19,7 +19,7 @@
     </div>
     <div class="form-group">
         <label for="editor">Deskripsi Penyakit</label>
-        <textarea name="desc" class="form-control" id="editor1">
+        <textarea name="penyakit_desc" class="form-control" id="editor1">
         {{$penyakit[0]->penyakit_desc}}
         </textarea>
     </div>

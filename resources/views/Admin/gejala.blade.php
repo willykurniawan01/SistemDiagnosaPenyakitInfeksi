@@ -112,7 +112,7 @@
                             <div class="form-group">
                                 <label for="gejala">Gejala</label>
                                 <input name="gejala" type="text" class="form-control" id="gejala"
-                                    placeholder="">
+                            >
                             </div>
                             <div class="form-group">
                                 <label for="pertanyaan">Pertanyaan</label>
@@ -121,11 +121,11 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-sidipi text-white font-weight-bold"
+                        <button typ ="button" class="btn btn-sidipi text-white font-weight-bold"
                             data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-sidipi text-white font-weight-bold">Submit</button>
                     </div>
-                    </>
+                </form>
                 </div>
             </div>
         </div>
@@ -148,8 +148,8 @@
                             @csrf
                             <div class="form-group">
                                 <div class="py-2">
-                                    <label for="Gejala">Gejala</label>
-                                    <select name="gejala" id="Gejala" class="form-control">
+                                    <label for="gejala-relasi">Gejala</label>
+                                    <select name="gejala-relasi" id="gejala-relasi" class="form-control">
                                         <option selected>Pilih...</option>
                                         @foreach($gejala as $g)
                                         <option value="{{$g->id_gejala}}">{{$g->gejala}}</option>

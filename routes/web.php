@@ -25,8 +25,11 @@ Route::get('/penyakit/live', 'ArtikelPenyakitController@live_search')->name('liv
 
 Route::get('penyakit/{id}', 'ArtikelPenyakitController@show')->name('sidipi-single-penyakit');
 
+//diagnosa
 Route::get('/diagnosa', 'DiagnosaController@index')->name('sidipi-diagnosa');
-Route::get('/diagnosa/hasil/{id}', 'DiagnosaController@show')->name('sidipi-hasil-diagnosa');
+Route::post('/diagnosa/proses', 'DiagnosaController@diagnosa')->name('proses-diagnosa');
+//diagnosa
+
 Route::get('/artikel/detail/{id}', 'HomepageController@show')->name('sidipi-single');
 Route::get('/developer/{id}', 'DeveloperController@show')->name('sidipi-developer');
 

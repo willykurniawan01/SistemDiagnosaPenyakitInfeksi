@@ -12,7 +12,8 @@
             </nav>
         </div>
 
-        <form action="" method="post">
+        <form action="{{route('proses-diagnosa')}}" method="post">
+            @csrf
             <table class="table">
                 <thead class="bg-sidipi text-sidipi">
                     <tr>
@@ -22,24 +23,21 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($gejala as $g)
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                    <th scope="row">{{$loop->iteration}}</th>
+                    <td>{!!$g->pertanyaan!!}</td>
+                    <td>
+                        <div class="input-group">
+                        <input type="checkbox"class="form-check" name="jawaban[]" id="ya" value="{{$g->  id_gejala}}">
+                        <label for="ya">ya</label>
+                        </div>
+                    </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
-            <a href="{{route('sidipi-hasil-diagnosa',['id'=>1])}}" class="btn btn-sidipi">Proses</a>
+            <button type="submit" class="btn btn-sidipi">Proses</button>
         </form>
     </div>
 </section>

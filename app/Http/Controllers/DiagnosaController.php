@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DiagnosaController extends Controller
 {
@@ -13,72 +14,28 @@ class DiagnosaController extends Controller
      */
     public function index()
     {
-        return view('Home.diagnosa');
+        $gejala = DB::table('gejala')
+            ->get();
+        return view('Home.diagnosa', ['gejala' => $gejala]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function diagnosa(Request $request)
     {
-        //
-    }
+        $query = "SELECT nama_penyakit FROM penyakit WHERE id_penyakit IN (select id_penyakit FROM penyakit_has_gejala WHERE id_gejala=9 OR id_gejala=12 OR id_gejala=8)";
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        if (count($request->input('jawaban')) == 1) {
+            $query = "SELECT nama_penyakit FROM penyakit WHERE id_penyakit IN (select id_penyakit FROM penyakit_has_gejala WHERE id_gejala=" . $request->input('jawaban')[0] . ")";
+        } else {
+            $query = "SELECT nama_penyakit FROM penyakit WHERE id_penyakit IN (select id_penyakit FROM penyakit_has_gejala WHERE id_gejala=" . $request->input('jawaban')[0] . "";
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return view('Home.hasil-diagnosa');
-    }
+            foreach ($request->input('jawaban') as $p) {
+                $query .= " OR id_gejala=" . $p . "";
+            }
+            $query .= ")";
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $hasil = DB::select($query);
+        dd($hasil);
+        return view('Home.hasil-diagnosa', ['hasil' => $hasil]);
     }
 }
