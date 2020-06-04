@@ -35,7 +35,6 @@ class DiagnosaController extends Controller
         }
 
         $hasil = DB::select($query);
-        dd($hasil);
         return view('Home.hasil-diagnosa', ['hasil' => $hasil]);
     }
 }

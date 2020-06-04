@@ -14,11 +14,15 @@
             </div>
 
             <div class="row hasil-diagnosa">
-                <h4>Beberapa Kemungkinan penyakit yang anda Derita :</h4>
+                <h4>Beberapa Kemungkinan penyakit yang anda Derita :
+                </h4>
+                <h4 class="hasil"> @foreach ($hasil as $h)
+                    {{$loop->iteration==1?$h->nama_penyakit:','.$h->nama_penyakit}}
+                @endforeach</h4>
             </div>
 
             <div class="row saran justify-content-center">
-                <h4>Silahkan pergi ke dokter...</h4>
+                <h4>Silahkan cek kesehatan anda ke dokter...</h4>
             </div>
 
             <div class="row img">
