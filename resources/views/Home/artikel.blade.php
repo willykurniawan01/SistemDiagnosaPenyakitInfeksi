@@ -50,14 +50,17 @@
                 <div class="col-12">
                     <div class="card my-4">
                         <h5 class="card-header bg-sidipi text-sidipi">Search</h5>
+                    <form action="{{route('cari-artikel')}}" method="post">
+                        @csrf
                         <div class="card-body">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
+                                <input name="cari" type="text" class="form-control" placeholder="Search for...">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-sidipi" type="button">Go!</button>
+                                    <button class="btn btn-sidipi" type="submit">Go!</button>
                                 </span>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>

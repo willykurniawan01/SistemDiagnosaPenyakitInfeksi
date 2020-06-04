@@ -39,9 +39,14 @@ class HomepageController extends Controller
         ]);
     }
 
-    public function article($category = null)
+    public function article(Request $request, $category = null)
     {
-        if (isset($category)) {
+        if ($request->input('cari')) {
+            $post = DB::table('post')
+                ->where('judul', 'like', '%' . $request->input('cari') . '%')
+                ->orderBy('id_post', 'DESC')
+                ->paginate(6);
+        } elseif (isset($category)) {
             if ($category == 'popular') {
                 $post = DB::table('post')
                     ->where('popular', '=', 1)

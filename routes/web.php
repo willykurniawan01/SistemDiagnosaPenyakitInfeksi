@@ -16,9 +16,14 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'HomepageController@index')->name('sidipi-home');
+
+// view artikel
 Route::get('/artikel', 'HomepageController@article')->name('sidipi-artikel');
+//cari-artikel
+Route::post('/artikel', 'HomepageController@article')->name('cari-artikel');
 
 Route::get('artikel/{category}', 'HomepageController@article')->name('sidipi-category');
+
 
 Route::get('/penyakit', 'ArtikelPenyakitController@index')->name('sidipi-penyakit');
 Route::get('/penyakit/live', 'ArtikelPenyakitController@live_search')->name('live_search');

@@ -216,7 +216,7 @@
                         @if(count($corona_virus)==1)
                         <?php $limit=1; ?>
                         @endif
-                        @for($i=0;$i<$limit;$i++) <div class="card py-4 px-4 my-3">
+                        @for($i=0;$i<$limit;$i++)<div class="card py-4 px-4 my-3">
                             <figure class="figure">
                                 <div class="figure-img">
                                     <img src="{{url('storage/uploads').'/'.$corona_virus[$i]->img}}"
@@ -262,7 +262,7 @@
                                 <div> {!!(str_word_count($corona_virus[$i]->isi))>60 ?
                                     substr($corona_virus[$i]->isi,0,20):$corona_virus[$i]->isi!!}
                                     ...</div>
-                                <a href="{{route('sidipi-single',['id'=>encrypt($corona_virus[$i]->id_post)])}}"
+                                <a href="{{route('sidipi-single',['id'=>$corona_virus[$i]->id_post])}}"
                                     class="btn btn-sidipi">Selengkapnya</a>
                             </figcaption>
                         </figure>
