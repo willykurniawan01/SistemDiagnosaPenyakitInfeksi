@@ -110,6 +110,6 @@ class GejalaController extends Controller
     public function destroy($id)
     {
         DB::table('gejala')->where('id_gejala', '=', decrypt($id))->delete();
-        return redirect('Admin/gejala');
+        return redirect('Admin/gejala')->with(['success' => 'Berhasil Menghapus Data Gejala']);
     }
 }
