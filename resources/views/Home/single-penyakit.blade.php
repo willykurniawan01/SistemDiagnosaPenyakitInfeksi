@@ -22,9 +22,7 @@
                         </h4>
                     </div>
                 </div>
-        
-
-
+                 
                 <div class="row row-img-single">
                     <div class="col-12">
                         <img src="{{url('storage/uploads/'.'/'.$penyakit[0]->img)}}" class="img-fluid img-single float-left"
@@ -63,8 +61,8 @@
                 <div class="card my-4">
                     <h5 class="card-header bg-sidipi text-sidipi">Kategori Penyakit</h5>
                     <div class="card-body">
-                        <div class="row">
-                           {{$penyakit[0]->kategori}}
+                        <div class="row justify-content-center">
+                           <h4 class="text-sidipi2 fomt-weight-bold">{{$penyakit[0]->kategori}}</h4>
                         </div>
                     </div>
                 </div>

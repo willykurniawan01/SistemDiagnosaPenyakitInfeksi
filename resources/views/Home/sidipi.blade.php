@@ -323,26 +323,9 @@
                     <img src="{{ url('Home/assets/img/developer.png') }}" class="img-fluid rounded-circle" alt="..." />
                     <a href="{{route('sidipi-developer',['id'=>1])}}"></a>
                 </div>
-                <figcaption class="figure-caption">
-                    A caption for the above image.
-                </figcaption>
-            </figure>
-            <figure class="figure">
-                <div class="figure-img">
-                    <img src="{{ url('Home/assets/img/developer.png') }}" class="img-fluid rounded-circle" alt="..." />
-                    <a href=""></a>
-                </div>
-                <figcaption class="figure-caption">
-                    A caption for the above image.
-                </figcaption>
-            </figure>
-            <figure class="figure">
-                <div class="figure-img">
-                    <img src="{{ url('Home/assets/img/developer.png') }}" class="img-fluid rounded-circle" alt="..." />
-                    <a href=""></a>
-                </div>
-                <figcaption class="figure-caption">
-                    A caption for the above image.
+                <figcaption class="figure-caption text-center">
+                    <h5 class="text-sidipi">Willy kurniawan</h5>
+                    <h4 class="text-sidipi2 font-weight-bold">Web Developer</h4>
                 </figcaption>
             </figure>
         </div>
